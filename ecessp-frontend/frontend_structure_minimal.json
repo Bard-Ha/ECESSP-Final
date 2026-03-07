@@ -1,0 +1,92 @@
+{
+  "name": "ecessp-frontend",
+  "files": [
+    ".gitignore",
+    ".replit",
+    "components.json",
+    "drizzle.config.ts",
+    "package-lock.json",
+    "package.json",
+    "postcss.config.js",
+    "scan_frontend_minimal.py",
+    "tailwind.config.ts",
+    "tsconfig.json",
+    "vite.config.ts"
+  ],
+  "subfolders": [
+    {
+      "name": ".git",
+      "files": [
+        "COMMIT_EDITMSG",
+        "config",
+        "description",
+        "HEAD",
+        "index"
+      ],
+      "subfolders": [],
+      "file_count": 5,
+      "subfolder_count": 0
+    },
+    {
+      "name": ".local",
+      "files": [],
+      "subfolders": [],
+      "file_count": 0,
+      "subfolder_count": 0
+    },
+    {
+      "name": "attached_assets",
+      "files": [
+        "Pasted--project-name-ecessp-frontend-description-React-Tailwin_1770831953645.txt"
+      ],
+      "subfolders": [],
+      "file_count": 1,
+      "subfolder_count": 0
+    },
+    {
+      "name": "client",
+      "files": [
+        "index.html",
+        "requirements.md"
+      ],
+      "subfolders": [],
+      "file_count": 2,
+      "subfolder_count": 0
+    },
+    {
+      "name": "script",
+      "files": [
+        "build.ts"
+      ],
+      "subfolders": [],
+      "file_count": 1,
+      "subfolder_count": 0
+    },
+    {
+      "name": "server",
+      "files": [
+        "db.ts",
+        "index.ts",
+        "routes.ts",
+        "static.ts",
+        "storage.ts",
+        "vite.ts"
+      ],
+      "subfolders": [],
+      "file_count": 6,
+      "subfolder_count": 0
+    },
+    {
+      "name": "shared",
+      "files": [
+        "routes.ts",
+        "schema.ts"
+      ],
+      "subfolders": [],
+      "file_count": 2,
+      "subfolder_count": 0
+    }
+  ],
+  "file_count": 11,
+  "subfolder_count": 7
+}

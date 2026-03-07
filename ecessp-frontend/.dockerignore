@@ -1,0 +1,14 @@
+node_modules
+dist
+.local
+attached_assets
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
