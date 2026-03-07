@@ -1,0 +1,2 @@
+candidate_id,experiment_completed,exp_voltage_v,exp_capacity_mah_g,exp_capacity_retention_50cyc_pct,exp_initial_coulombic_efficiency_pct,exp_insertion_reversible,notes
+demo_li_001,true,2.37,250.0,88.0,93.0,true,Example row; replace with measured electrochemistry.

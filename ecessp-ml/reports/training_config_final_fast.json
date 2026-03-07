@@ -1,0 +1,123 @@
+{
+  "battery_feature_dim": 7,
+  "material_embedding_dim": 64,
+  "num_materials": 5,
+  "hidden_dim": 128,
+  "latent_dim": 128,
+  "num_gnn_layers": 3,
+  "material_interaction": "mpnn",
+  "enable_graph_context": true,
+  "graph_context_dim": 7,
+  "decoder_mode": "multihead",
+  "enable_uncertainty": true,
+  "enable_role_head": true,
+  "enable_compatibility_head": true,
+  "role_output_dim": 3,
+  "compatibility_output_dim": 3,
+  "dropout": 0.2,
+  "dataset_mode": "ml",
+  "graph_path": "graphs/masked_battery_graph_normalized_v2.pt",
+  "output_dir": "reports",
+  "parsed_data_path": "data/processed/batteries_parsed_curated.csv",
+  "epochs": 72,
+  "batch_size": 32,
+  "learning_rate": 0.0007,
+  "weight_decay": 0.0001,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "lr_patience": 7,
+  "early_stopping_patience": 12,
+  "use_cuda": true,
+  "atomic_embeddings_path": "data/processed/atomic_embeddings_curated.csv",
+  "batteries_data_path": "data/processed/batteries_ml_curated.csv",
+  "split_indices_path": "reports/benchmark_splits.json",
+  "sample_weighting": {
+    "enabled": true,
+    "column": "target_sample_weight",
+    "normalize_mean_to_one": true,
+    "min": 0.2,
+    "max": 1.0
+  },
+  "loss": {
+    "regression_loss": "MSE",
+    "regression_weight": 1.0,
+    "regression_target_weights": {
+      "average_voltage": 1.0,
+      "capacity_grav": 1.9,
+      "capacity_vol": 1.25,
+      "energy_grav": 1.8,
+      "energy_vol": 1.55,
+      "stability_charge": 0.85,
+      "stability_discharge": 0.85
+    },
+    "capacity_grav_huber_weight": 0.3,
+    "capacity_grav_huber_beta": 0.2,
+    "capacity_violation_penalty": 12.0,
+    "voltage_violation_penalty": 10.0,
+    "energy_cap_violation_penalty": 28.0,
+    "physics_consistency_loss": 4.0,
+    "thermodynamic_consistency_loss": 5.0,
+    "mass_balance_penalty": 8.0,
+    "ood_penalty": 9.0,
+    "uncertainty_regularization": 0.1,
+    "role_loss_weight": 0.35,
+    "compatibility_loss_weight": 0.45,
+    "novelty_weight": 0.03
+  },
+  "full_cell_model": {
+    "active_mass_fraction_range": [
+      0.6,
+      0.75
+    ],
+    "np_ratio_range": [
+      1.05,
+      1.15
+    ]
+  },
+  "physics_limits": {
+    "min_voltage": 1.0,
+    "max_voltage": 4.4,
+    "max_capacity_grav": 350.0,
+    "max_energy_grav": 450.0,
+    "max_energy_vol": 1200.0
+  },
+  "constraints_policy": {
+    "clip_capacity_to_theoretical": true,
+    "hard_reject_energy_cap_violation": true,
+    "reject_if_any_physics_violation": true
+  },
+  "scope": {
+    "insertion_only_training": true
+  },
+  "split_protocol": {
+    "name": "grouped_iid_plus_ood_v2_na_holdout",
+    "group_keys": [
+      "chemsys",
+      "framework_formula",
+      "working_ion"
+    ],
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "ood": {
+      "enabled": true,
+      "holdout_ion": "Na",
+      "holdout_chemsys_fraction": 0.06,
+      "min_ion_count": 80
+    }
+  },
+  "target_policy": {
+    "direct_targets": [
+      "average_voltage",
+      "capacity_grav",
+      "capacity_vol",
+      "stability_charge",
+      "stability_discharge",
+      "max_delta_volume"
+    ],
+    "derived_targets": [
+      "energy_grav",
+      "energy_vol"
+    ],
+    "energy_is_derived": true
+  }
+}

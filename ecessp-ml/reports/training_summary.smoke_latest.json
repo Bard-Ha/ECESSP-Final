@@ -1,0 +1,354 @@
+{
+  "timestamp": "20260226_142638",
+  "device": "cpu",
+  "ensemble_size": 1,
+  "dataset_mode": "ml",
+  "parsed_data_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\data\\processed\\batteries_parsed_curated.csv",
+  "dataset_mapping_source": "ml (data/processed/batteries_ml_curated.csv)",
+  "target_policy": {
+    "direct_targets": [
+      "average_voltage",
+      "capacity_grav",
+      "capacity_vol",
+      "stability_charge",
+      "stability_discharge",
+      "max_delta_volume"
+    ],
+    "derived_targets": [
+      "energy_grav",
+      "energy_vol"
+    ],
+    "energy_is_derived": true
+  },
+  "model_architecture": {
+    "material_interaction": "mpnn",
+    "enable_graph_context": true,
+    "graph_context_dim": 7,
+    "enable_role_head": true,
+    "enable_compatibility_head": true,
+    "role_output_dim": 3,
+    "compatibility_output_dim": 3,
+    "graph_version": "masked_graph_v2.1_multiview"
+  },
+  "benchmark_protocol": {
+    "name": "external_benchmark_split",
+    "group_keys": [
+      "chemsys",
+      "framework_formula",
+      "working_ion"
+    ],
+    "counts": {
+      "total": 6683,
+      "train": 4113,
+      "val": 881,
+      "test_iid": 884,
+      "test_ood": 805
+    },
+    "source": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\benchmark_splits.json",
+    "ood": {
+      "enabled": true,
+      "holdout_ion": "Na",
+      "holdout_chemsys_fraction": 0.06,
+      "holdout_chemsys_count": 93,
+      "holdout_chemsys_preview": [
+        "Ag-Ba-Cu-O-Y",
+        "Ag-Cl-Cr-O",
+        "Ag-Cr-O",
+        "Ag-Mn-O",
+        "Ag-Mo-O",
+        "Ag-Nb-O-Ta",
+        "As-Cu-Fe-O-Pb",
+        "As-Cu-S",
+        "Au-S-V",
+        "Ba-Co-K-N-O",
+        "Ba-Co-Mo-O",
+        "Ba-Co-O-W",
+        "Ba-Cr-Cu-O-Y",
+        "Ba-Cu-Eu-O",
+        "Ba-Cu-Mn-O-Y",
+        "Ba-Fe-O-W",
+        "Ba-Mn-O-Y",
+        "Ba-Mo-O",
+        "Be-Co-O",
+        "Bi-F"
+      ]
+    }
+  },
+  "sample_weighting": {
+    "enabled": true,
+    "source": "parsed:target_sample_weight",
+    "column": "target_sample_weight",
+    "normalize_mean_to_one": true,
+    "train_mean": 0.9993644952774048,
+    "train_min": 0.22597678005695343,
+    "train_max": 1.129883885383606,
+    "train_p10": 0.2786259353160858,
+    "train_p90": 1.129883885383606
+  },
+  "best_val_loss": 5.200867237757879,
+  "final_test_loss_iid": 3.0474722385406494,
+  "final_test_loss_ood": 1.589176893234253,
+  "best_epoch": 1,
+  "best_checkpoint": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260226_142638.pt",
+  "evaluation_metrics": {
+    "iid": {
+      "normalized_space": {
+        "average_voltage": {
+          "mae": 0.22193749248981476,
+          "rmse": 0.3015916347503662,
+          "mape_percent": 18.0286922454834,
+          "r2": 0.9097806005512551,
+          "pearson_r": 0.958467403301774
+        },
+        "capacity_grav": {
+          "mae": 0.5396395325660706,
+          "rmse": 1.730682373046875,
+          "mape_percent": 26.297992706298828,
+          "r2": 0.4315554651252137,
+          "pearson_r": 0.7061887131670389
+        },
+        "capacity_vol": {
+          "mae": 0.4852374196052551,
+          "rmse": 1.1109553575515747,
+          "mape_percent": 28.61275291442871,
+          "r2": 0.5576942871542028,
+          "pearson_r": 0.8047319057581059
+        },
+        "energy_grav": {
+          "mae": 0.8211801648139954,
+          "rmse": 1.1764827966690063,
+          "mape_percent": 63.93275451660156,
+          "r2": -0.09137707147820673,
+          "pearson_r": 0.8898176918737696
+        },
+        "energy_vol": {
+          "mae": 0.8830448389053345,
+          "rmse": 1.271613597869873,
+          "mape_percent": 66.81239318847656,
+          "r2": -0.21472460224889178,
+          "pearson_r": 0.8689627558793591
+        },
+        "stability_charge": {
+          "mae": 0.9171340465545654,
+          "rmse": 3.189531087875366,
+          "mape_percent": 42.26464080810547,
+          "r2": 0.3036813578094809,
+          "pearson_r": 0.7447915138838094
+        },
+        "stability_discharge": {
+          "mae": 0.8901385068893433,
+          "rmse": 1.9589909315109253,
+          "mape_percent": 52.568519592285156,
+          "r2": 0.22153973608436206,
+          "pearson_r": 0.6394215191471636
+        },
+        "overall_micro": {
+          "mae": 0.6797588467597961,
+          "rmse": 1.7457010746002197,
+          "mape_percent": 42.64539337158203,
+          "r2": 0.32843060471190566,
+          "pearson_r": 0.6354530114597625
+        }
+      },
+      "raw_space": {
+        "average_voltage": {
+          "mae": 0.32568684220314026,
+          "rmse": 0.44257697463035583,
+          "mape_percent": 17.976219177246094,
+          "r2": 0.9097806065725167,
+          "pearson_r": 0.9584674023721699
+        },
+        "capacity_grav": {
+          "mae": 36.018287658691406,
+          "rmse": 115.51455688476562,
+          "mape_percent": 21.787025451660156,
+          "r2": 0.43155545977404774,
+          "pearson_r": 0.7061887069268221
+        },
+        "capacity_vol": {
+          "mae": 131.42454528808594,
+          "rmse": 300.8976745605469,
+          "mape_percent": 26.85059356689453,
+          "r2": 0.5576942495412305,
+          "pearson_r": 0.8047319051940176
+        },
+        "energy_grav": {
+          "mae": 237.5007781982422,
+          "rmse": 340.2610168457031,
+          "mape_percent": 60.40373611450195,
+          "r2": -0.09137725957709053,
+          "pearson_r": 0.8898176870044843
+        },
+        "energy_vol": {
+          "mae": 918.1950073242188,
+          "rmse": 1322.2308349609375,
+          "mape_percent": 60.332725524902344,
+          "r2": -0.21472455470072327,
+          "pearson_r": 0.8689627574884145
+        },
+        "stability_charge": {
+          "mae": 0.06699331104755402,
+          "rmse": 0.23298364877700806,
+          "mape_percent": 5.300241947174072,
+          "r2": 0.30368132018383964,
+          "pearson_r": 0.7447915035650567
+        },
+        "stability_discharge": {
+          "mae": 0.0826328843832016,
+          "rmse": 0.18185602128505707,
+          "mape_percent": 7.626480579376221,
+          "r2": 0.2215398778128529,
+          "pearson_r": 0.6394215307341927
+        },
+        "overall_micro": {
+          "mae": 189.0876922607422,
+          "rmse": 530.2230224609375,
+          "mape_percent": 28.61100196838379,
+          "r2": 0.4113300332588876,
+          "pearson_r": 0.8072453782303318
+        }
+      }
+    },
+    "ood": {
+      "normalized_space": {
+        "average_voltage": {
+          "mae": 0.19863837957382202,
+          "rmse": 0.2580418288707733,
+          "mape_percent": 16.693252563476562,
+          "r2": 0.9240720462713388,
+          "pearson_r": 0.965101176550426
+        },
+        "capacity_grav": {
+          "mae": 0.4720902442932129,
+          "rmse": 1.2743278741836548,
+          "mape_percent": 26.793655395507812,
+          "r2": 0.5462414970454166,
+          "pearson_r": 0.7719012745851929
+        },
+        "capacity_vol": {
+          "mae": 0.4448772966861725,
+          "rmse": 0.8557085990905762,
+          "mape_percent": 30.200654983520508,
+          "r2": 0.6599319734646228,
+          "pearson_r": 0.854211737950685
+        },
+        "energy_grav": {
+          "mae": 0.8855656981468201,
+          "rmse": 1.1914485692977905,
+          "mape_percent": 67.89059448242188,
+          "r2": -0.2061815654297321,
+          "pearson_r": 0.9208136661518712
+        },
+        "energy_vol": {
+          "mae": 0.8816717267036438,
+          "rmse": 1.1799367666244507,
+          "mape_percent": 68.65557098388672,
+          "r2": -0.34940716313164244,
+          "pearson_r": 0.8998703114278476
+        },
+        "stability_charge": {
+          "mae": 0.765092134475708,
+          "rmse": 1.8868759870529175,
+          "mape_percent": 43.46537399291992,
+          "r2": 0.4938024229922091,
+          "pearson_r": 0.8212577662273144
+        },
+        "stability_discharge": {
+          "mae": 0.9012061357498169,
+          "rmse": 1.526238203048706,
+          "mape_percent": 61.19557189941406,
+          "r2": 0.3214234630018836,
+          "pearson_r": 0.7335126521795694
+        },
+        "overall_micro": {
+          "mae": 0.6498773694038391,
+          "rmse": 1.2606256008148193,
+          "mape_percent": 44.984947204589844,
+          "r2": 0.4256569762525876,
+          "pearson_r": 0.695481187208296
+        }
+      },
+      "raw_space": {
+        "average_voltage": {
+          "mae": 0.2914960980415344,
+          "rmse": 0.3786689043045044,
+          "mape_percent": 13.897721290588379,
+          "r2": 0.9240720403791858,
+          "pearson_r": 0.9651011759453958
+        },
+        "capacity_grav": {
+          "mae": 31.50971031188965,
+          "rmse": 85.05513763427734,
+          "mape_percent": 20.755199432373047,
+          "r2": 0.5462414389565462,
+          "pearson_r": 0.771901267260121
+        },
+        "capacity_vol": {
+          "mae": 120.49317932128906,
+          "rmse": 231.76513671875,
+          "mape_percent": 26.215208053588867,
+          "r2": 0.6599319509053446,
+          "pearson_r": 0.8542117402209737
+        },
+        "energy_grav": {
+          "mae": 256.12225341796875,
+          "rmse": 344.58935546875,
+          "mape_percent": 60.5415153503418,
+          "r2": -0.20618144474306344,
+          "pearson_r": 0.9208136669888457
+        },
+        "energy_vol": {
+          "mae": 916.7671508789062,
+          "rmse": 1226.90478515625,
+          "mape_percent": 57.965789794921875,
+          "r2": -0.34940699281800347,
+          "pearson_r": 0.8998703101703516
+        },
+        "stability_charge": {
+          "mae": 0.05588719993829727,
+          "rmse": 0.13782942295074463,
+          "mape_percent": 5.24850606918335,
+          "r2": 0.49380247625681006,
+          "pearson_r": 0.8212577567340147
+        },
+        "stability_discharge": {
+          "mae": 0.0836603045463562,
+          "rmse": 0.141682967543602,
+          "mape_percent": 8.220577239990234,
+          "r2": 0.3214233624844648,
+          "pearson_r": 0.7335126531821841
+        },
+        "overall_micro": {
+          "mae": 189.33189392089844,
+          "rmse": 490.62451171875,
+          "mape_percent": 27.549219131469727,
+          "r2": 0.43782437734615887,
+          "pearson_r": 0.8291468966526877
+        }
+      }
+    }
+  },
+  "physics_violation_statistics": {
+    "iid": {
+      "capacity_violation_rate": 0.0,
+      "theoretical_capacity_valid_fraction": 0.0,
+      "voltage_above_4p4_rate": 0.0
+    },
+    "ood": {
+      "capacity_violation_rate": 0.0,
+      "theoretical_capacity_valid_fraction": 0.0,
+      "voltage_above_4p4_rate": 0.0
+    }
+  },
+  "uncertainty_statistics": {
+    "pred_uncertainty_mean": 0.0,
+    "pred_uncertainty_std": 0.0,
+    "corr_uncertainty_abs_error": 0.0
+  },
+  "distribution_shift_statistics": {
+    "ood_distance_mean": 5.73468542098999,
+    "ood_distance_p95": 10.232772827148438,
+    "novelty_mean": 0.0
+  },
+  "report_folder": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260226_142638"
+}

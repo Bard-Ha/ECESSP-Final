@@ -1,0 +1,1105 @@
+{
+  "validation_step": 9,
+  "scenario_count": 3,
+  "scenarios": [
+    {
+      "name": "li_high_energy",
+      "working_ion": "Li",
+      "objective": {
+        "average_voltage": 3.95,
+        "capacity_grav": 230.0,
+        "capacity_vol": 720.0,
+        "energy_grav": 908.5,
+        "stability_charge": 0.1,
+        "stability_discharge": 0.06
+      },
+      "candidate_count": 0,
+      "report_card": {
+        "stage_0": {
+          "objective": {
+            "working_ion": "Li",
+            "working_ion_candidates": [
+              "Li"
+            ],
+            "target_vector": {
+              "average_voltage": 3.95,
+              "capacity_grav": 230.0,
+              "energy_grav": 908.5,
+              "stability_charge": 0.1,
+              "stability_discharge": 0.06
+            },
+            "target_ranges": {
+              "average_voltage": [
+                3.476,
+                4.424
+              ],
+              "capacity_grav": [
+                202.4,
+                257.6
+              ],
+              "energy_grav": [
+                799.48,
+                1017.52
+              ],
+              "stability_charge": [
+                0.05,
+                0.15000000000000002
+              ],
+              "stability_discharge": [
+                0.009999999999999995,
+                0.11
+              ]
+            },
+            "target_weights": {
+              "average_voltage": 1.0,
+              "capacity_grav": 1.0,
+              "energy_grav": 1.0,
+              "stability_charge": 1.0,
+              "stability_discharge": 1.0
+            },
+            "insertion_only": true,
+            "require_overall_valid": true,
+            "objective_mode": "weighted_mahalanobis",
+            "max_candidates": 5,
+            "material_source_mode": "hybrid",
+            "component_source_mode": "hybrid",
+            "separator_options_count": 3,
+            "additive_options_count": 3,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true
+          },
+          "constitution_v2": {
+            "passed": true,
+            "reasons": [],
+            "units_enforced": {
+              "average_voltage": "V",
+              "capacity_grav": "mAh/g",
+              "capacity_vol": "mAh/cm^3",
+              "energy_grav": "Wh/kg",
+              "energy_vol": "Wh/L"
+            },
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "physics_first_then_scoring": true
+          },
+          "graph_manifest_validation": {
+            "configured_graph_filename": "masked_battery_graph_normalized_v2.pt",
+            "configured_graph_dir": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\graphs",
+            "valid": true,
+            "warnings": [],
+            "errors": [],
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "constitution_v2": {
+              "dataset_fingerprint_present": true,
+              "required_metadata_fields_present": true,
+              "feature_order_matchable": true,
+              "scaler_type_allowed": true
+            },
+            "metadata_version": "masked_graph_v2.1_multiview"
+          }
+        },
+        "stage_1": {
+          "material_candidates_generated": 130,
+          "component_conditioned_generation": true,
+          "generated_per_component": {
+            "cathode": 64,
+            "anode": 64,
+            "electrolyte": 2,
+            "separator": 3,
+            "additive": 3
+          },
+          "working_ion_scope": [
+            "Li"
+          ],
+          "material_source_mode": "hybrid",
+          "generation_mode": {
+            "latent_sampling": true,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true,
+            "component_class_conditioning": true
+          },
+          "generated_by_component_and_working_ion": {
+            "cathode": {
+              "Li": 64
+            },
+            "anode": {
+              "Li": 64
+            },
+            "electrolyte": {
+              "Li": 3
+            },
+            "separator": {
+              "Li": 3
+            },
+            "additive": {
+              "Li": 3
+            }
+          },
+          "component_option_pools": {
+            "Li": {
+              "source_mode": "hybrid",
+              "electrolyte_options": [
+                "LiPF6",
+                "LiPF6",
+                "LiFSI"
+              ],
+              "separator_options": [
+                "PP/PE trilayer separator",
+                "Generated Li-ion ceramic-polymer separator (strain-tuned)",
+                "Ceramic-coated PP/PE separator"
+              ],
+              "additive_options": [
+                "FEC + VC blend",
+                "Generated Li-ion SEI stabilizer package (V=3.95)",
+                "LiDFOB additive package"
+              ],
+              "electrolyte_option_count": 3,
+              "separator_option_count": 3,
+              "additive_option_count": 3,
+              "existing_electrolyte_pool_size": 3,
+              "existing_separator_pool_size": 3,
+              "existing_additive_pool_size": 3,
+              "generated_electrolyte_pool_size": 3,
+              "generated_separator_pool_size": 6,
+              "generated_additive_pool_size": 6
+            }
+          },
+          "chemistry_reports": 128,
+          "chemistry_rejection_reason_counts": {
+            "oxidation_state_unsolved": 79,
+            "strict_oxidation_unsolved": 81,
+            "unknown_polyanion_cluster": 53,
+            "duplicate_formula": 11,
+            "simple_binary_oxide_no_open_framework": 8,
+            "insertion_probability_below_threshold": 8,
+            "formula_parse_failed": 5
+          },
+          "material_candidates_valid": 8,
+          "valid_per_component": {
+            "cathode": 5,
+            "anode": 3,
+            "electrolyte": 0
+          }
+        },
+        "stage_1b": {
+          "classification_required": true,
+          "per_component": {
+            "cathode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 5,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 4,
+                "fluoride": 1
+              }
+            },
+            "anode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 12,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 6,
+                "low_voltage_oxide": 3,
+                "polyanion": 3
+              }
+            },
+            "electrolyte": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 2,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "fluoride": 2
+              }
+            }
+          },
+          "role_class_gate": {
+            "cathode": {
+              "role": "cathode",
+              "allowed_classes": [
+                "fluoride",
+                "polyanion",
+                "sulfide",
+                "transition_metal_oxide"
+              ],
+              "input_count": 5,
+              "kept_count": 5,
+              "rejected_count": 0,
+              "rejection_reason_counts": {}
+            },
+            "anode": {
+              "role": "anode",
+              "allowed_classes": [
+                "alloy_metallic",
+                "carbon",
+                "conversion_material",
+                "low_voltage_oxide"
+              ],
+              "input_count": 12,
+              "kept_count": 3,
+              "rejected_count": 9,
+              "rejection_reason_counts": {
+                "anode_role_class_mismatch:transition_metal_oxide": 6,
+                "anode_role_class_mismatch:polyanion": 3
+              }
+            },
+            "electrolyte": {
+              "role": "electrolyte",
+              "allowed_classes": [
+                "glass",
+                "organic_liquid",
+                "polymer",
+                "solid_li_conductor"
+              ],
+              "input_count": 2,
+              "kept_count": 0,
+              "rejected_count": 2,
+              "rejection_reason_counts": {
+                "electrolyte_role_class_mismatch:fluoride": 2
+              }
+            }
+          }
+        },
+        "stage_2": {},
+        "stage_3": {},
+        "stage_4": {},
+        "stage_5": {},
+        "stage_6": {},
+        "stage_7": {},
+        "stage_8": {},
+        "stage_9": {},
+        "stage_6_7": {},
+        "stage_10": {},
+        "guardrail_flags": {
+          "normalization_mismatch_flag": false,
+          "redox_inversion_flag": false,
+          "ontology_violation_flag": true,
+          "electrolyte_class_violation_flag": true,
+          "voltage_inconsistency_flag": false
+        }
+      },
+      "top": {
+        "score": 0.0,
+        "framework_formula": null,
+        "capacity_grav": null,
+        "average_voltage": null,
+        "material_novelty_score": null,
+        "material_uncertainty_proxy": null,
+        "material_thermodynamic_proxy": null
+      }
+    },
+    {
+      "name": "li_balanced",
+      "working_ion": "Li",
+      "objective": {
+        "average_voltage": 3.7,
+        "capacity_grav": 190.0,
+        "capacity_vol": 640.0,
+        "energy_grav": 703.0,
+        "stability_charge": 0.08,
+        "stability_discharge": 0.05
+      },
+      "candidate_count": 0,
+      "report_card": {
+        "stage_0": {
+          "objective": {
+            "working_ion": "Li",
+            "working_ion_candidates": [
+              "Li"
+            ],
+            "target_vector": {
+              "average_voltage": 3.7,
+              "capacity_grav": 190.0,
+              "energy_grav": 703.0,
+              "stability_charge": 0.08,
+              "stability_discharge": 0.05
+            },
+            "target_ranges": {
+              "average_voltage": [
+                3.2560000000000002,
+                4.144
+              ],
+              "capacity_grav": [
+                167.2,
+                212.8
+              ],
+              "energy_grav": [
+                618.64,
+                787.36
+              ],
+              "stability_charge": [
+                0.03,
+                0.13
+              ],
+              "stability_discharge": [
+                0.0,
+                0.1
+              ]
+            },
+            "target_weights": {
+              "average_voltage": 1.0,
+              "capacity_grav": 1.0,
+              "energy_grav": 1.0,
+              "stability_charge": 1.0,
+              "stability_discharge": 1.0
+            },
+            "insertion_only": true,
+            "require_overall_valid": true,
+            "objective_mode": "weighted_mahalanobis",
+            "max_candidates": 5,
+            "material_source_mode": "hybrid",
+            "component_source_mode": "hybrid",
+            "separator_options_count": 3,
+            "additive_options_count": 3,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true
+          },
+          "constitution_v2": {
+            "passed": true,
+            "reasons": [],
+            "units_enforced": {
+              "average_voltage": "V",
+              "capacity_grav": "mAh/g",
+              "capacity_vol": "mAh/cm^3",
+              "energy_grav": "Wh/kg",
+              "energy_vol": "Wh/L"
+            },
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "physics_first_then_scoring": true
+          },
+          "graph_manifest_validation": {
+            "configured_graph_filename": "masked_battery_graph_normalized_v2.pt",
+            "configured_graph_dir": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\graphs",
+            "valid": true,
+            "warnings": [],
+            "errors": [],
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "constitution_v2": {
+              "dataset_fingerprint_present": true,
+              "required_metadata_fields_present": true,
+              "feature_order_matchable": true,
+              "scaler_type_allowed": true
+            },
+            "metadata_version": "masked_graph_v2.1_multiview"
+          }
+        },
+        "stage_1": {
+          "material_candidates_generated": 130,
+          "component_conditioned_generation": true,
+          "generated_per_component": {
+            "cathode": 64,
+            "anode": 64,
+            "electrolyte": 2,
+            "separator": 3,
+            "additive": 3
+          },
+          "working_ion_scope": [
+            "Li"
+          ],
+          "material_source_mode": "hybrid",
+          "generation_mode": {
+            "latent_sampling": true,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true,
+            "component_class_conditioning": true
+          },
+          "generated_by_component_and_working_ion": {
+            "cathode": {
+              "Li": 64
+            },
+            "anode": {
+              "Li": 64
+            },
+            "electrolyte": {
+              "Li": 3
+            },
+            "separator": {
+              "Li": 3
+            },
+            "additive": {
+              "Li": 3
+            }
+          },
+          "component_option_pools": {
+            "Li": {
+              "source_mode": "hybrid",
+              "electrolyte_options": [
+                "LiPF6",
+                "LiPF6",
+                "LiFSI"
+              ],
+              "separator_options": [
+                "PP/PE trilayer separator",
+                "Generated Li-ion ceramic-polymer separator (strain-tuned)",
+                "Ceramic-coated PP/PE separator"
+              ],
+              "additive_options": [
+                "FEC + VC blend",
+                "Generated Li-ion SEI stabilizer package (V=3.70)",
+                "LiDFOB additive package"
+              ],
+              "electrolyte_option_count": 3,
+              "separator_option_count": 3,
+              "additive_option_count": 3,
+              "existing_electrolyte_pool_size": 3,
+              "existing_separator_pool_size": 3,
+              "existing_additive_pool_size": 3,
+              "generated_electrolyte_pool_size": 3,
+              "generated_separator_pool_size": 6,
+              "generated_additive_pool_size": 6
+            }
+          },
+          "chemistry_reports": 128,
+          "chemistry_rejection_reason_counts": {
+            "oxidation_state_unsolved": 72,
+            "strict_oxidation_unsolved": 76,
+            "unknown_polyanion_cluster": 54,
+            "structure_family_unknown": 1,
+            "simple_binary_oxide_no_open_framework": 9,
+            "missing_diffusion_topology_proxy": 1,
+            "insertion_probability_below_threshold": 9,
+            "formula_parse_failed": 6,
+            "duplicate_formula": 9
+          },
+          "material_candidates_valid": 11,
+          "valid_per_component": {
+            "cathode": 9,
+            "anode": 2,
+            "electrolyte": 0
+          }
+        },
+        "stage_1b": {
+          "classification_required": true,
+          "per_component": {
+            "cathode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 9,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 4,
+                "fluoride": 3,
+                "polyanion": 2
+              }
+            },
+            "anode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 9,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 5,
+                "polyanion": 2,
+                "low_voltage_oxide": 2
+              }
+            },
+            "electrolyte": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 2,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "fluoride": 2
+              }
+            }
+          },
+          "role_class_gate": {
+            "cathode": {
+              "role": "cathode",
+              "allowed_classes": [
+                "fluoride",
+                "polyanion",
+                "sulfide",
+                "transition_metal_oxide"
+              ],
+              "input_count": 9,
+              "kept_count": 9,
+              "rejected_count": 0,
+              "rejection_reason_counts": {}
+            },
+            "anode": {
+              "role": "anode",
+              "allowed_classes": [
+                "alloy_metallic",
+                "carbon",
+                "conversion_material",
+                "low_voltage_oxide"
+              ],
+              "input_count": 9,
+              "kept_count": 2,
+              "rejected_count": 7,
+              "rejection_reason_counts": {
+                "anode_role_class_mismatch:transition_metal_oxide": 5,
+                "anode_role_class_mismatch:polyanion": 2
+              }
+            },
+            "electrolyte": {
+              "role": "electrolyte",
+              "allowed_classes": [
+                "glass",
+                "organic_liquid",
+                "polymer",
+                "solid_li_conductor"
+              ],
+              "input_count": 2,
+              "kept_count": 0,
+              "rejected_count": 2,
+              "rejection_reason_counts": {
+                "electrolyte_role_class_mismatch:fluoride": 2
+              }
+            }
+          }
+        },
+        "stage_2": {},
+        "stage_3": {},
+        "stage_4": {},
+        "stage_5": {},
+        "stage_6": {},
+        "stage_7": {},
+        "stage_8": {},
+        "stage_9": {},
+        "stage_6_7": {},
+        "stage_10": {},
+        "guardrail_flags": {
+          "normalization_mismatch_flag": false,
+          "redox_inversion_flag": false,
+          "ontology_violation_flag": true,
+          "electrolyte_class_violation_flag": true,
+          "voltage_inconsistency_flag": false
+        }
+      },
+      "top": {
+        "score": 0.0,
+        "framework_formula": null,
+        "capacity_grav": null,
+        "average_voltage": null,
+        "material_novelty_score": null,
+        "material_uncertainty_proxy": null,
+        "material_thermodynamic_proxy": null
+      }
+    },
+    {
+      "name": "na_balanced",
+      "working_ion": "Na",
+      "objective": {
+        "average_voltage": 3.2,
+        "capacity_grav": 170.0,
+        "capacity_vol": 550.0,
+        "energy_grav": 544.0,
+        "stability_charge": 0.08,
+        "stability_discharge": 0.05
+      },
+      "candidate_count": 0,
+      "report_card": {
+        "stage_0": {
+          "objective": {
+            "working_ion": "Na",
+            "working_ion_candidates": [
+              "Na",
+              "Li"
+            ],
+            "target_vector": {
+              "average_voltage": 3.2,
+              "capacity_grav": 170.0,
+              "energy_grav": 544.0,
+              "stability_charge": 0.08,
+              "stability_discharge": 0.05
+            },
+            "target_ranges": {
+              "average_voltage": [
+                2.8160000000000003,
+                3.584
+              ],
+              "capacity_grav": [
+                149.6,
+                190.4
+              ],
+              "energy_grav": [
+                478.72,
+                609.28
+              ],
+              "stability_charge": [
+                0.03,
+                0.13
+              ],
+              "stability_discharge": [
+                0.0,
+                0.1
+              ]
+            },
+            "target_weights": {
+              "average_voltage": 1.0,
+              "capacity_grav": 1.0,
+              "energy_grav": 1.0,
+              "stability_charge": 1.0,
+              "stability_discharge": 1.0
+            },
+            "insertion_only": true,
+            "require_overall_valid": true,
+            "objective_mode": "weighted_mahalanobis",
+            "max_candidates": 5,
+            "material_source_mode": "hybrid",
+            "component_source_mode": "hybrid",
+            "separator_options_count": 3,
+            "additive_options_count": 3,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true
+          },
+          "constitution_v2": {
+            "passed": true,
+            "reasons": [],
+            "units_enforced": {
+              "average_voltage": "V",
+              "capacity_grav": "mAh/g",
+              "capacity_vol": "mAh/cm^3",
+              "energy_grav": "Wh/kg",
+              "energy_vol": "Wh/L"
+            },
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "physics_first_then_scoring": true
+          },
+          "graph_manifest_validation": {
+            "configured_graph_filename": "masked_battery_graph_normalized_v2.pt",
+            "configured_graph_dir": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\graphs",
+            "valid": true,
+            "warnings": [],
+            "errors": [],
+            "guardrail_flags": {
+              "normalization_mismatch_flag": false,
+              "redox_inversion_flag": false,
+              "ontology_violation_flag": false,
+              "electrolyte_class_violation_flag": false,
+              "voltage_inconsistency_flag": false
+            },
+            "constitution_v2": {
+              "dataset_fingerprint_present": true,
+              "required_metadata_fields_present": true,
+              "feature_order_matchable": true,
+              "scaler_type_allowed": true
+            },
+            "metadata_version": "masked_graph_v2.1_multiview"
+          }
+        },
+        "stage_1": {
+          "material_candidates_generated": 132,
+          "component_conditioned_generation": true,
+          "generated_per_component": {
+            "cathode": 64,
+            "anode": 64,
+            "electrolyte": 4,
+            "separator": 6,
+            "additive": 6
+          },
+          "working_ion_scope": [
+            "Na",
+            "Li"
+          ],
+          "material_source_mode": "hybrid",
+          "generation_mode": {
+            "latent_sampling": true,
+            "interpolation_enabled": true,
+            "extrapolation_enabled": true,
+            "component_class_conditioning": true
+          },
+          "generated_by_component_and_working_ion": {
+            "cathode": {
+              "Na": 32,
+              "Li": 32
+            },
+            "anode": {
+              "Na": 32,
+              "Li": 32
+            },
+            "electrolyte": {
+              "Na": 3,
+              "Li": 3
+            },
+            "separator": {
+              "Na": 3,
+              "Li": 3
+            },
+            "additive": {
+              "Na": 3,
+              "Li": 3
+            }
+          },
+          "component_option_pools": {
+            "Na": {
+              "source_mode": "hybrid",
+              "electrolyte_options": [
+                "NaPF6",
+                "NaPF6",
+                "NaFSI"
+              ],
+              "separator_options": [
+                "Ceramic-coated PP/PE separator",
+                "Generated Na-ion ceramic-polymer separator (strain-tuned)",
+                "Na-stable polyolefin separator"
+              ],
+              "additive_options": [
+                "FEC + NaDFOB blend",
+                "Generated Na-ion SEI stabilizer package (V=3.20)",
+                "NaFSI interphase package"
+              ],
+              "electrolyte_option_count": 3,
+              "separator_option_count": 3,
+              "additive_option_count": 3,
+              "existing_electrolyte_pool_size": 3,
+              "existing_separator_pool_size": 3,
+              "existing_additive_pool_size": 3,
+              "generated_electrolyte_pool_size": 3,
+              "generated_separator_pool_size": 6,
+              "generated_additive_pool_size": 6
+            },
+            "Li": {
+              "source_mode": "hybrid",
+              "electrolyte_options": [
+                "LiPF6",
+                "LiPF6",
+                "LiFSI"
+              ],
+              "separator_options": [
+                "PP/PE trilayer separator",
+                "Generated Li-ion ceramic-polymer separator (strain-tuned)",
+                "Ceramic-coated PP/PE separator"
+              ],
+              "additive_options": [
+                "FEC + VC blend",
+                "Generated Li-ion SEI stabilizer package (V=3.20)",
+                "LiDFOB additive package"
+              ],
+              "electrolyte_option_count": 3,
+              "separator_option_count": 3,
+              "additive_option_count": 3,
+              "existing_electrolyte_pool_size": 3,
+              "existing_separator_pool_size": 3,
+              "existing_additive_pool_size": 3,
+              "generated_electrolyte_pool_size": 3,
+              "generated_separator_pool_size": 6,
+              "generated_additive_pool_size": 6
+            }
+          },
+          "chemistry_reports": 128,
+          "chemistry_rejection_reason_counts": {
+            "oxidation_state_unsolved": 66,
+            "strict_oxidation_unsolved": 58,
+            "unknown_polyanion_cluster": 52,
+            "simple_binary_oxide_no_open_framework": 6,
+            "insertion_probability_below_threshold": 6,
+            "duplicate_formula": 20,
+            "formula_parse_failed": 9
+          },
+          "material_candidates_valid": 9,
+          "valid_per_component": {
+            "cathode": 7,
+            "anode": 2,
+            "electrolyte": 0
+          }
+        },
+        "stage_1b": {
+          "classification_required": true,
+          "per_component": {
+            "cathode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 10,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 4,
+                "polyanion": 3,
+                "low_voltage_oxide": 3
+              }
+            },
+            "anode": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 11,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "transition_metal_oxide": 5,
+                "polyanion": 4,
+                "low_voltage_oxide": 2
+              }
+            },
+            "electrolyte": {
+              "classification_required": true,
+              "allowed_classes": [
+                "transition_metal_oxide",
+                "polyanion",
+                "sulfide",
+                "fluoride",
+                "carbon",
+                "alloy_metallic",
+                "solid_li_conductor",
+                "polymer",
+                "organic_liquid",
+                "glass",
+                "inert_separator_material"
+              ],
+              "reject_if_unclassified": true,
+              "classified_count": 4,
+              "rejected_unclassified_count": 0,
+              "class_counts": {
+                "fluoride": 4
+              }
+            }
+          },
+          "role_class_gate": {
+            "cathode": {
+              "role": "cathode",
+              "allowed_classes": [
+                "fluoride",
+                "polyanion",
+                "sulfide",
+                "transition_metal_oxide"
+              ],
+              "input_count": 10,
+              "kept_count": 7,
+              "rejected_count": 3,
+              "rejection_reason_counts": {
+                "cathode_role_class_mismatch:low_voltage_oxide": 3
+              }
+            },
+            "anode": {
+              "role": "anode",
+              "allowed_classes": [
+                "alloy_metallic",
+                "carbon",
+                "conversion_material",
+                "low_voltage_oxide"
+              ],
+              "input_count": 11,
+              "kept_count": 2,
+              "rejected_count": 9,
+              "rejection_reason_counts": {
+                "anode_role_class_mismatch:transition_metal_oxide": 5,
+                "anode_role_class_mismatch:polyanion": 4
+              }
+            },
+            "electrolyte": {
+              "role": "electrolyte",
+              "allowed_classes": [
+                "glass",
+                "organic_liquid",
+                "polymer",
+                "solid_li_conductor"
+              ],
+              "input_count": 4,
+              "kept_count": 0,
+              "rejected_count": 4,
+              "rejection_reason_counts": {
+                "electrolyte_role_class_mismatch:fluoride": 4
+              }
+            }
+          }
+        },
+        "stage_2": {},
+        "stage_3": {},
+        "stage_4": {},
+        "stage_5": {},
+        "stage_6": {},
+        "stage_7": {},
+        "stage_8": {},
+        "stage_9": {},
+        "stage_6_7": {},
+        "stage_10": {},
+        "guardrail_flags": {
+          "normalization_mismatch_flag": false,
+          "redox_inversion_flag": false,
+          "ontology_violation_flag": true,
+          "electrolyte_class_violation_flag": true,
+          "voltage_inconsistency_flag": false
+        }
+      },
+      "top": {
+        "score": 0.0,
+        "framework_formula": null,
+        "capacity_grav": null,
+        "average_voltage": null,
+        "material_novelty_score": null,
+        "material_uncertainty_proxy": null,
+        "material_thermodynamic_proxy": null
+      }
+    }
+  ],
+  "aggregate_report_card": {
+    "hit_rate_at_k": 0.0,
+    "constraint_validity_rate": 0.0,
+    "physics_violation_rate": 0.0,
+    "novelty_mean": 0.0,
+    "novelty_p90": 0.0,
+    "uncertainty_calibration_corr": 0.0,
+    "ood_acceptance_rate": 0.0
+  },
+  "counterfactual_checks": [
+    {
+      "ion": "Li",
+      "low_target_capacity": 195.5,
+      "high_target_capacity": 264.5,
+      "low_feasible_target_capacity": 195.5,
+      "high_feasible_target_capacity": 264.5,
+      "top_low_capacity": 0.0,
+      "top_high_capacity": 0.0,
+      "direction_mode": "increasing",
+      "directional_pass": true
+    },
+    {
+      "ion": "Li",
+      "low_target_capacity": 161.5,
+      "high_target_capacity": 218.49999999999997,
+      "low_feasible_target_capacity": 161.5,
+      "high_feasible_target_capacity": 218.49999999999997,
+      "top_low_capacity": 0.0,
+      "top_high_capacity": 0.0,
+      "direction_mode": "increasing",
+      "directional_pass": true
+    },
+    {
+      "ion": "Na",
+      "low_target_capacity": 144.5,
+      "high_target_capacity": 195.49999999999997,
+      "low_feasible_target_capacity": 144.5,
+      "high_feasible_target_capacity": 195.49999999999997,
+      "top_low_capacity": 0.0,
+      "top_high_capacity": 0.0,
+      "direction_mode": "increasing",
+      "directional_pass": true
+    }
+  ],
+  "counterfactual_pass_rate": 1.0
+}

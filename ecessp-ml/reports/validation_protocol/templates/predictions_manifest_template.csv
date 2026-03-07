@@ -1,0 +1,2 @@
+candidate_id,rank,working_ion,cathode_formula,anode_formula,electrolyte_formula,predicted_voltage_v,predicted_capacity_mah_g,predicted_max_delta_volume_ratio,predicted_insertion_probability,predicted_uncertainty_penalty,predicted_np_ratio,predicted_sei_expected,predicted_thermal_risk
+demo_li_001,1,Li,Li3V2(PO4)3,Li4Ti5O12,LiPF6,2.50,280.0,0.08,0.91,0.18,1.10,false,false

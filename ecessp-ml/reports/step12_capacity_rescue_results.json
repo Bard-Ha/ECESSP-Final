@@ -1,0 +1,923 @@
+{
+  "search_epochs": 24,
+  "search_patience": 8,
+  "candidates_tested": 5,
+  "successful_trials": 5,
+  "best": {
+    "returncode": 0,
+    "runtime_sec": 289.71532559394836,
+    "stdout_tail": "[model 1/1] [epoch 007] train=326.64971 val=4.82381 mse=1.08056 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=342.43123 val=5.16480 mse=1.02676 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=358.01865 val=4.74718 mse=1.05690 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=288.31799 val=5.01840 mse=1.04062 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=306.18918 val=4.64731 mse=1.04794 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=141.76470 val=10.69351 mse=1.03198 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=183.03514 val=4.72251 mse=1.02785 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=95.99698 val=4.59581 mse=1.02526 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=141.06471 val=4.57755 mse=1.01162 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=185.56821 val=4.57816 mse=1.00469 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=90.25957 val=4.75804 mse=0.98756 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=339.49876 val=4.61824 mse=0.99961 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=280.87934 val=4.60654 mse=0.98647 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=138.55216 val=4.63141 mse=0.98088 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=168.06306 val=4.57288 mse=0.97086 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=166.05080 val=4.57658 mse=1.00380 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=99.57518 val=4.59996 mse=0.98256 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4805 MAE=175.5026 RMSE=498.1014 MAPE%=25.27 PearsonR=0.8063\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_090802\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+    "stderr_tail": "C:\\Users\\Rinatoh computer\\AppData\\Roaming\\Python\\Python314\\site-packages\\torch\\nn\\modules\\transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\NestedTensorImpl.cpp:182.)\n  output = torch._nested_tensor_from_mask(",
+    "summary_timestamp": "20260227_090802",
+    "iid_raw_overall": {
+      "mae": 175.50257873535156,
+      "rmse": 498.1014404296875,
+      "mape_percent": 25.269962310791016,
+      "r2": 0.48049433895513693,
+      "pearson_r": 0.8063198916429338
+    },
+    "ood_raw_overall": {
+      "mae": 177.91384887695312,
+      "rmse": 460.65704345703125,
+      "mape_percent": 25.260723114013672,
+      "r2": 0.5044026618624124,
+      "pearson_r": 0.8270784217692319
+    },
+    "iid_raw_capacity_grav": {
+      "mae": 29.78002166748047,
+      "rmse": 110.8213882446289,
+      "mape_percent": 16.24580192565918,
+      "r2": 0.47680711401299947,
+      "pearson_r": 0.7388149725271091
+    },
+    "ood_raw_capacity_grav": {
+      "mae": 25.182540893554688,
+      "rmse": 79.8880386352539,
+      "mape_percent": 15.555583000183105,
+      "r2": 0.5996985032296269,
+      "pearson_r": 0.8017378958307153
+    },
+    "iid_raw_capacity_vol": {
+      "mae": 116.08040618896484,
+      "rmse": 209.9561309814453,
+      "mape_percent": 26.22581672668457,
+      "r2": 0.7846513962206627,
+      "pearson_r": 0.8961866507886841
+    },
+    "ood_raw_capacity_vol": {
+      "mae": 112.8834228515625,
+      "rmse": 178.44029235839844,
+      "mape_percent": 25.855985641479492,
+      "r2": 0.7984162909877387,
+      "pearson_r": 0.904654200305905
+    },
+    "iid_physics": {
+      "capacity_violation_rate": 0.0,
+      "theoretical_capacity_valid_fraction": 0.0,
+      "voltage_above_4p4_rate": 0.0
+    },
+    "ood_physics": {
+      "capacity_violation_rate": 0.0,
+      "theoretical_capacity_valid_fraction": 0.0,
+      "voltage_above_4p4_rate": 0.0
+    },
+    "selection_score": 0.5410553607066226,
+    "candidate": {
+      "name": "tr_baseline",
+      "material_interaction": "transformer",
+      "num_gnn_layers": 2,
+      "hidden_dim": 128,
+      "dropout": 0.15,
+      "enable_graph_context": true,
+      "lr": 0.0008,
+      "weight_decay": 5e-05,
+      "feature_dropout": 0.1,
+      "feature_noise": 0.02,
+      "loss_override": {}
+    }
+  },
+  "ranked": [
+    {
+      "returncode": 0,
+      "runtime_sec": 289.71532559394836,
+      "stdout_tail": "[model 1/1] [epoch 007] train=326.64971 val=4.82381 mse=1.08056 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=342.43123 val=5.16480 mse=1.02676 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=358.01865 val=4.74718 mse=1.05690 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=288.31799 val=5.01840 mse=1.04062 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=306.18918 val=4.64731 mse=1.04794 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=141.76470 val=10.69351 mse=1.03198 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=183.03514 val=4.72251 mse=1.02785 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=95.99698 val=4.59581 mse=1.02526 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=141.06471 val=4.57755 mse=1.01162 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=185.56821 val=4.57816 mse=1.00469 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=90.25957 val=4.75804 mse=0.98756 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=339.49876 val=4.61824 mse=0.99961 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=280.87934 val=4.60654 mse=0.98647 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=138.55216 val=4.63141 mse=0.98088 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=168.06306 val=4.57288 mse=0.97086 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=166.05080 val=4.57658 mse=1.00380 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=99.57518 val=4.59996 mse=0.98256 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4805 MAE=175.5026 RMSE=498.1014 MAPE%=25.27 PearsonR=0.8063\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_090802\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "C:\\Users\\Rinatoh computer\\AppData\\Roaming\\Python\\Python314\\site-packages\\torch\\nn\\modules\\transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\NestedTensorImpl.cpp:182.)\n  output = torch._nested_tensor_from_mask(",
+      "summary_timestamp": "20260227_090802",
+      "iid_raw_overall": {
+        "mae": 175.50257873535156,
+        "rmse": 498.1014404296875,
+        "mape_percent": 25.269962310791016,
+        "r2": 0.48049433895513693,
+        "pearson_r": 0.8063198916429338
+      },
+      "ood_raw_overall": {
+        "mae": 177.91384887695312,
+        "rmse": 460.65704345703125,
+        "mape_percent": 25.260723114013672,
+        "r2": 0.5044026618624124,
+        "pearson_r": 0.8270784217692319
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 29.78002166748047,
+        "rmse": 110.8213882446289,
+        "mape_percent": 16.24580192565918,
+        "r2": 0.47680711401299947,
+        "pearson_r": 0.7388149725271091
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 25.182540893554688,
+        "rmse": 79.8880386352539,
+        "mape_percent": 15.555583000183105,
+        "r2": 0.5996985032296269,
+        "pearson_r": 0.8017378958307153
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 116.08040618896484,
+        "rmse": 209.9561309814453,
+        "mape_percent": 26.22581672668457,
+        "r2": 0.7846513962206627,
+        "pearson_r": 0.8961866507886841
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 112.8834228515625,
+        "rmse": 178.44029235839844,
+        "mape_percent": 25.855985641479492,
+        "r2": 0.7984162909877387,
+        "pearson_r": 0.904654200305905
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5410553607066226,
+      "candidate": {
+        "name": "tr_baseline",
+        "material_interaction": "transformer",
+        "num_gnn_layers": 2,
+        "hidden_dim": 128,
+        "dropout": 0.15,
+        "enable_graph_context": true,
+        "lr": 0.0008,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.1,
+        "feature_noise": 0.02,
+        "loss_override": {}
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 255.00115942955017,
+      "stdout_tail": "[model 1/1] [epoch 007] train=240.66707 val=4.45942 mse=1.07197 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=654.14492 val=4.26338 mse=1.05349 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=116.79028 val=4.22925 mse=1.01405 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=193.56404 val=21.08174 mse=1.01143 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=193.28256 val=4.29907 mse=0.99250 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=137.35563 val=4.21536 mse=0.98403 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=138.44788 val=4.22538 mse=1.01156 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=126.18798 val=4.08926 mse=0.96284 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=389.90982 val=4.12514 mse=0.96748 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=200.08593 val=7.07872 mse=0.95836 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=118.17948 val=4.13576 mse=0.94198 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=295.94045 val=4.13896 mse=0.95240 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=172.07050 val=4.12899 mse=0.94881 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=71.23000 val=4.10202 mse=0.94401 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=139.53830 val=4.09261 mse=0.92741 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=73.94558 val=4.10179 mse=0.95452 lr=1.00e-04 skip_non_finite(train/val)=0/0\n[model 1] early stop at epoch 22\n[eval/raw] R2=0.4579 MAE=181.0600 RMSE=508.8388 MAPE%=26.04 PearsonR=0.7992\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_091232\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "C:\\Users\\Rinatoh computer\\AppData\\Roaming\\Python\\Python314\\site-packages\\torch\\nn\\modules\\transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\NestedTensorImpl.cpp:182.)\n  output = torch._nested_tensor_from_mask(",
+      "summary_timestamp": "20260227_091232",
+      "iid_raw_overall": {
+        "mae": 181.0600128173828,
+        "rmse": 508.83880615234375,
+        "mape_percent": 26.036701202392578,
+        "r2": 0.4578553570163224,
+        "pearson_r": 0.7992058099376547
+      },
+      "ood_raw_overall": {
+        "mae": 182.4861297607422,
+        "rmse": 469.2327880859375,
+        "mape_percent": 26.089712142944336,
+        "r2": 0.48577853746108746,
+        "pearson_r": 0.8207465323590613
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 33.43513107299805,
+        "rmse": 110.90477752685547,
+        "mape_percent": 20.193164825439453,
+        "r2": 0.47601948673919803,
+        "pearson_r": 0.7482382881479909
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 29.03612518310547,
+        "rmse": 81.37661743164062,
+        "mape_percent": 20.208696365356445,
+        "r2": 0.5846416243971233,
+        "pearson_r": 0.7962094585935385
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 112.14399719238281,
+        "rmse": 215.44009399414062,
+        "mape_percent": 25.706239700317383,
+        "r2": 0.7732548413286339,
+        "pearson_r": 0.8893492967483609
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 112.02853393554688,
+        "rmse": 176.8407440185547,
+        "mape_percent": 26.34259796142578,
+        "r2": 0.8020140853409058,
+        "pearson_r": 0.9069103218629249
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5312605345461122,
+      "candidate": {
+        "name": "tr_cap_light",
+        "material_interaction": "transformer",
+        "num_gnn_layers": 2,
+        "hidden_dim": 128,
+        "dropout": 0.15,
+        "enable_graph_context": true,
+        "lr": 0.0008,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.1,
+        "feature_noise": 0.02,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.2,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.9,
+            "energy_vol": 0.9,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.08,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 297.7357494831085,
+      "stdout_tail": "[model 1/1] [epoch 007] train=118.96775 val=4.41890 mse=1.05169 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=184.26860 val=4.30072 mse=1.03734 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=90.90182 val=4.33479 mse=0.99632 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=184.23812 val=4.21157 mse=1.00204 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=168.94922 val=7.19904 mse=1.00193 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=1085.58269 val=4.19805 mse=0.96788 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=381.50371 val=4.21229 mse=0.97302 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=289.29889 val=4.16105 mse=0.95682 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=253.34322 val=4.18312 mse=0.97064 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=103.08825 val=4.17322 mse=0.95871 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=138.36774 val=4.19174 mse=0.96143 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=297.74427 val=4.19021 mse=0.96348 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=88.49924 val=4.14851 mse=0.94750 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=246.52611 val=4.16185 mse=0.93312 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=126.80259 val=4.14644 mse=0.93782 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=706.83353 val=4.15997 mse=0.94084 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=33.91079 val=4.17452 mse=0.94359 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4495 MAE=181.5337 RMSE=512.7595 MAPE%=25.58 PearsonR=0.7930\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_092238\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_092238",
+      "iid_raw_overall": {
+        "mae": 181.53372192382812,
+        "rmse": 512.759521484375,
+        "mape_percent": 25.58128547668457,
+        "r2": 0.44946856292741966,
+        "pearson_r": 0.7929890036918822
+      },
+      "ood_raw_overall": {
+        "mae": 183.4849395751953,
+        "rmse": 475.062255859375,
+        "mape_percent": 25.56520652770996,
+        "r2": 0.4729223828591679,
+        "pearson_r": 0.8141118169187437
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 31.746437072753906,
+        "rmse": 111.36034393310547,
+        "mape_percent": 17.448959350585938,
+        "r2": 0.471705849163787,
+        "pearson_r": 0.7376589073856916
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 27.167434692382812,
+        "rmse": 80.79356384277344,
+        "mape_percent": 17.281538009643555,
+        "r2": 0.5905722945544362,
+        "pearson_r": 0.7986829787404914
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 108.63898468017578,
+        "rmse": 217.64962768554688,
+        "mape_percent": 24.22254753112793,
+        "r2": 0.7685800525960154,
+        "pearson_r": 0.8842174568629907
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 104.07230377197266,
+        "rmse": 175.64808654785156,
+        "mape_percent": 23.680315017700195,
+        "r2": 0.8046756368222624,
+        "pearson_r": 0.9043510318531286
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5301676469385819,
+      "candidate": {
+        "name": "mpnn_cap_medium",
+        "material_interaction": "mpnn",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.08,
+        "feature_noise": 0.015,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.35,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.85,
+            "energy_vol": 0.85,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.12,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 351.60577869415283,
+      "stdout_tail": "[model 1/1] [epoch 007] train=80.42682 val=4.23008 mse=1.04661 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=142.62162 val=4.16748 mse=1.03599 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=61.05893 val=4.16091 mse=0.98093 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=728.51094 val=4.13202 mse=0.99069 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=660.33392 val=4.12534 mse=0.98542 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=317.09277 val=4.13748 mse=0.99419 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=291.55731 val=4.14380 mse=0.96972 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=129.68983 val=4.08625 mse=0.94380 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=76.89707 val=4.08683 mse=0.94428 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=258.52152 val=4.16558 mse=0.93609 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=241.48394 val=4.07845 mse=0.93666 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=332.68653 val=4.10755 mse=0.95689 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=1126.12010 val=4.07934 mse=0.92615 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=115.57447 val=4.04069 mse=0.94708 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=199.03698 val=12.58491 mse=0.93412 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=538.01821 val=5.37759 mse=0.93166 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=295.83048 val=4.04672 mse=0.95227 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4586 MAE=180.0884 RMSE=508.4754 MAPE%=25.25 PearsonR=0.8050\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_092736\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_092736",
+      "iid_raw_overall": {
+        "mae": 180.08843994140625,
+        "rmse": 508.4753723144531,
+        "mape_percent": 25.254518508911133,
+        "r2": 0.458629526622616,
+        "pearson_r": 0.8049705010882179
+      },
+      "ood_raw_overall": {
+        "mae": 182.0358428955078,
+        "rmse": 471.7472839355469,
+        "mape_percent": 25.270429611206055,
+        "r2": 0.4802525840903641,
+        "pearson_r": 0.8228213499595658
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 32.16447067260742,
+        "rmse": 113.01197814941406,
+        "mape_percent": 17.981964111328125,
+        "r2": 0.45591889559466536,
+        "pearson_r": 0.7280263768059144
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 26.967926025390625,
+        "rmse": 82.24398040771484,
+        "mape_percent": 16.90258026123047,
+        "r2": 0.5757401650265305,
+        "pearson_r": 0.7900312386802021
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 100.26026153564453,
+        "rmse": 196.36785888671875,
+        "mape_percent": 22.35213279724121,
+        "r2": 0.8116239192148407,
+        "pearson_r": 0.9122952348275356
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 96.72235107421875,
+        "rmse": 157.6650848388672,
+        "mape_percent": 22.97749137878418,
+        "r2": 0.8426232089830996,
+        "pearson_r": 0.9267645430754805
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5208591356694756,
+      "candidate": {
+        "name": "gatv2_cap_light_lowaug",
+        "material_interaction": "gatv2",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.03,
+        "feature_noise": 0.005,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.2,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.9,
+            "energy_vol": 0.9,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.08,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 354.3176038265228,
+      "stdout_tail": "[model 1/1] [epoch 007] train=322.15970 val=4.30148 mse=1.05797 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=288.40018 val=4.30308 mse=1.02304 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=110.81404 val=4.36949 mse=1.00312 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=143.48087 val=4.29507 mse=1.00987 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=240.64850 val=23.49378 mse=1.02280 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=127.87154 val=4.25423 mse=1.02257 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=286.35245 val=4.21075 mse=1.00238 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=80.68280 val=4.18847 mse=0.96065 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=180.98301 val=4.19815 mse=0.96654 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=43.79618 val=4.23175 mse=0.94511 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=132.37161 val=4.18732 mse=0.95091 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=125.90447 val=6.04284 mse=0.96970 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=65.49982 val=4.20558 mse=0.94908 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=311.91964 val=4.16510 mse=0.96876 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=47.41291 val=4.19281 mse=0.95669 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=242.48763 val=4.16758 mse=0.95024 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=159.08951 val=4.14517 mse=0.95381 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4559 MAE=181.0383 RMSE=509.7669 MAPE%=25.82 PearsonR=0.7988\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_091643\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_091643",
+      "iid_raw_overall": {
+        "mae": 181.03831481933594,
+        "rmse": 509.76690673828125,
+        "mape_percent": 25.820425033569336,
+        "r2": 0.4558758840753563,
+        "pearson_r": 0.7987500362385457
+      },
+      "ood_raw_overall": {
+        "mae": 183.06077575683594,
+        "rmse": 472.27178955078125,
+        "mape_percent": 25.849945068359375,
+        "r2": 0.47909618906353113,
+        "pearson_r": 0.8197296236458637
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 33.48014450073242,
+        "rmse": 112.79307556152344,
+        "mape_percent": 20.461565017700195,
+        "r2": 0.4580246805300119,
+        "pearson_r": 0.7343050793133729
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 28.272607803344727,
+        "rmse": 82.3024673461914,
+        "mape_percent": 19.355358123779297,
+        "r2": 0.5751365481561129,
+        "pearson_r": 0.7948690507768456
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 108.9028549194336,
+        "rmse": 205.7776641845703,
+        "mape_percent": 25.052419662475586,
+        "r2": 0.7931376586019561,
+        "pearson_r": 0.9097098490833622
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 105.907470703125,
+        "rmse": 169.2916259765625,
+        "mape_percent": 25.651025772094727,
+        "r2": 0.8185568612731016,
+        "pearson_r": 0.9198065302055405
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5202961477230621,
+      "candidate": {
+        "name": "gatv2_cap_medium",
+        "material_interaction": "gatv2",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.08,
+        "feature_noise": 0.015,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.35,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.85,
+            "energy_vol": 0.85,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.12,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    }
+  ],
+  "all_results": [
+    {
+      "returncode": 0,
+      "runtime_sec": 289.71532559394836,
+      "stdout_tail": "[model 1/1] [epoch 007] train=326.64971 val=4.82381 mse=1.08056 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=342.43123 val=5.16480 mse=1.02676 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=358.01865 val=4.74718 mse=1.05690 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=288.31799 val=5.01840 mse=1.04062 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=306.18918 val=4.64731 mse=1.04794 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=141.76470 val=10.69351 mse=1.03198 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=183.03514 val=4.72251 mse=1.02785 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=95.99698 val=4.59581 mse=1.02526 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=141.06471 val=4.57755 mse=1.01162 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=185.56821 val=4.57816 mse=1.00469 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=90.25957 val=4.75804 mse=0.98756 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=339.49876 val=4.61824 mse=0.99961 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=280.87934 val=4.60654 mse=0.98647 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=138.55216 val=4.63141 mse=0.98088 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=168.06306 val=4.57288 mse=0.97086 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=166.05080 val=4.57658 mse=1.00380 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=99.57518 val=4.59996 mse=0.98256 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4805 MAE=175.5026 RMSE=498.1014 MAPE%=25.27 PearsonR=0.8063\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_090802\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "C:\\Users\\Rinatoh computer\\AppData\\Roaming\\Python\\Python314\\site-packages\\torch\\nn\\modules\\transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\NestedTensorImpl.cpp:182.)\n  output = torch._nested_tensor_from_mask(",
+      "summary_timestamp": "20260227_090802",
+      "iid_raw_overall": {
+        "mae": 175.50257873535156,
+        "rmse": 498.1014404296875,
+        "mape_percent": 25.269962310791016,
+        "r2": 0.48049433895513693,
+        "pearson_r": 0.8063198916429338
+      },
+      "ood_raw_overall": {
+        "mae": 177.91384887695312,
+        "rmse": 460.65704345703125,
+        "mape_percent": 25.260723114013672,
+        "r2": 0.5044026618624124,
+        "pearson_r": 0.8270784217692319
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 29.78002166748047,
+        "rmse": 110.8213882446289,
+        "mape_percent": 16.24580192565918,
+        "r2": 0.47680711401299947,
+        "pearson_r": 0.7388149725271091
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 25.182540893554688,
+        "rmse": 79.8880386352539,
+        "mape_percent": 15.555583000183105,
+        "r2": 0.5996985032296269,
+        "pearson_r": 0.8017378958307153
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 116.08040618896484,
+        "rmse": 209.9561309814453,
+        "mape_percent": 26.22581672668457,
+        "r2": 0.7846513962206627,
+        "pearson_r": 0.8961866507886841
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 112.8834228515625,
+        "rmse": 178.44029235839844,
+        "mape_percent": 25.855985641479492,
+        "r2": 0.7984162909877387,
+        "pearson_r": 0.904654200305905
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5410553607066226,
+      "candidate": {
+        "name": "tr_baseline",
+        "material_interaction": "transformer",
+        "num_gnn_layers": 2,
+        "hidden_dim": 128,
+        "dropout": 0.15,
+        "enable_graph_context": true,
+        "lr": 0.0008,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.1,
+        "feature_noise": 0.02,
+        "loss_override": {}
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 255.00115942955017,
+      "stdout_tail": "[model 1/1] [epoch 007] train=240.66707 val=4.45942 mse=1.07197 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=654.14492 val=4.26338 mse=1.05349 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=116.79028 val=4.22925 mse=1.01405 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=193.56404 val=21.08174 mse=1.01143 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=193.28256 val=4.29907 mse=0.99250 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=137.35563 val=4.21536 mse=0.98403 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=138.44788 val=4.22538 mse=1.01156 lr=8.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=126.18798 val=4.08926 mse=0.96284 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=389.90982 val=4.12514 mse=0.96748 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=200.08593 val=7.07872 mse=0.95836 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=118.17948 val=4.13576 mse=0.94198 lr=4.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=295.94045 val=4.13896 mse=0.95240 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=172.07050 val=4.12899 mse=0.94881 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=71.23000 val=4.10202 mse=0.94401 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=139.53830 val=4.09261 mse=0.92741 lr=2.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=73.94558 val=4.10179 mse=0.95452 lr=1.00e-04 skip_non_finite(train/val)=0/0\n[model 1] early stop at epoch 22\n[eval/raw] R2=0.4579 MAE=181.0600 RMSE=508.8388 MAPE%=26.04 PearsonR=0.7992\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_091232\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "C:\\Users\\Rinatoh computer\\AppData\\Roaming\\Python\\Python314\\site-packages\\torch\\nn\\modules\\transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\NestedTensorImpl.cpp:182.)\n  output = torch._nested_tensor_from_mask(",
+      "summary_timestamp": "20260227_091232",
+      "iid_raw_overall": {
+        "mae": 181.0600128173828,
+        "rmse": 508.83880615234375,
+        "mape_percent": 26.036701202392578,
+        "r2": 0.4578553570163224,
+        "pearson_r": 0.7992058099376547
+      },
+      "ood_raw_overall": {
+        "mae": 182.4861297607422,
+        "rmse": 469.2327880859375,
+        "mape_percent": 26.089712142944336,
+        "r2": 0.48577853746108746,
+        "pearson_r": 0.8207465323590613
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 33.43513107299805,
+        "rmse": 110.90477752685547,
+        "mape_percent": 20.193164825439453,
+        "r2": 0.47601948673919803,
+        "pearson_r": 0.7482382881479909
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 29.03612518310547,
+        "rmse": 81.37661743164062,
+        "mape_percent": 20.208696365356445,
+        "r2": 0.5846416243971233,
+        "pearson_r": 0.7962094585935385
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 112.14399719238281,
+        "rmse": 215.44009399414062,
+        "mape_percent": 25.706239700317383,
+        "r2": 0.7732548413286339,
+        "pearson_r": 0.8893492967483609
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 112.02853393554688,
+        "rmse": 176.8407440185547,
+        "mape_percent": 26.34259796142578,
+        "r2": 0.8020140853409058,
+        "pearson_r": 0.9069103218629249
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5312605345461122,
+      "candidate": {
+        "name": "tr_cap_light",
+        "material_interaction": "transformer",
+        "num_gnn_layers": 2,
+        "hidden_dim": 128,
+        "dropout": 0.15,
+        "enable_graph_context": true,
+        "lr": 0.0008,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.1,
+        "feature_noise": 0.02,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.2,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.9,
+            "energy_vol": 0.9,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.08,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 354.3176038265228,
+      "stdout_tail": "[model 1/1] [epoch 007] train=322.15970 val=4.30148 mse=1.05797 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=288.40018 val=4.30308 mse=1.02304 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=110.81404 val=4.36949 mse=1.00312 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=143.48087 val=4.29507 mse=1.00987 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=240.64850 val=23.49378 mse=1.02280 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=127.87154 val=4.25423 mse=1.02257 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=286.35245 val=4.21075 mse=1.00238 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=80.68280 val=4.18847 mse=0.96065 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=180.98301 val=4.19815 mse=0.96654 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=43.79618 val=4.23175 mse=0.94511 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=132.37161 val=4.18732 mse=0.95091 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=125.90447 val=6.04284 mse=0.96970 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=65.49982 val=4.20558 mse=0.94908 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=311.91964 val=4.16510 mse=0.96876 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=47.41291 val=4.19281 mse=0.95669 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=242.48763 val=4.16758 mse=0.95024 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=159.08951 val=4.14517 mse=0.95381 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4559 MAE=181.0383 RMSE=509.7669 MAPE%=25.82 PearsonR=0.7988\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_091643\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_091643",
+      "iid_raw_overall": {
+        "mae": 181.03831481933594,
+        "rmse": 509.76690673828125,
+        "mape_percent": 25.820425033569336,
+        "r2": 0.4558758840753563,
+        "pearson_r": 0.7987500362385457
+      },
+      "ood_raw_overall": {
+        "mae": 183.06077575683594,
+        "rmse": 472.27178955078125,
+        "mape_percent": 25.849945068359375,
+        "r2": 0.47909618906353113,
+        "pearson_r": 0.8197296236458637
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 33.48014450073242,
+        "rmse": 112.79307556152344,
+        "mape_percent": 20.461565017700195,
+        "r2": 0.4580246805300119,
+        "pearson_r": 0.7343050793133729
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 28.272607803344727,
+        "rmse": 82.3024673461914,
+        "mape_percent": 19.355358123779297,
+        "r2": 0.5751365481561129,
+        "pearson_r": 0.7948690507768456
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 108.9028549194336,
+        "rmse": 205.7776641845703,
+        "mape_percent": 25.052419662475586,
+        "r2": 0.7931376586019561,
+        "pearson_r": 0.9097098490833622
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 105.907470703125,
+        "rmse": 169.2916259765625,
+        "mape_percent": 25.651025772094727,
+        "r2": 0.8185568612731016,
+        "pearson_r": 0.9198065302055405
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5202961477230621,
+      "candidate": {
+        "name": "gatv2_cap_medium",
+        "material_interaction": "gatv2",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.08,
+        "feature_noise": 0.015,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.35,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.85,
+            "energy_vol": 0.85,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.12,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 297.7357494831085,
+      "stdout_tail": "[model 1/1] [epoch 007] train=118.96775 val=4.41890 mse=1.05169 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=184.26860 val=4.30072 mse=1.03734 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=90.90182 val=4.33479 mse=0.99632 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=184.23812 val=4.21157 mse=1.00204 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=168.94922 val=7.19904 mse=1.00193 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=1085.58269 val=4.19805 mse=0.96788 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=381.50371 val=4.21229 mse=0.97302 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=289.29889 val=4.16105 mse=0.95682 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=253.34322 val=4.18312 mse=0.97064 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=103.08825 val=4.17322 mse=0.95871 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=138.36774 val=4.19174 mse=0.96143 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=297.74427 val=4.19021 mse=0.96348 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=88.49924 val=4.14851 mse=0.94750 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=246.52611 val=4.16185 mse=0.93312 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=126.80259 val=4.14644 mse=0.93782 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=706.83353 val=4.15997 mse=0.94084 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=33.91079 val=4.17452 mse=0.94359 lr=1.75e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4495 MAE=181.5337 RMSE=512.7595 MAPE%=25.58 PearsonR=0.7930\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_092238\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_092238",
+      "iid_raw_overall": {
+        "mae": 181.53372192382812,
+        "rmse": 512.759521484375,
+        "mape_percent": 25.58128547668457,
+        "r2": 0.44946856292741966,
+        "pearson_r": 0.7929890036918822
+      },
+      "ood_raw_overall": {
+        "mae": 183.4849395751953,
+        "rmse": 475.062255859375,
+        "mape_percent": 25.56520652770996,
+        "r2": 0.4729223828591679,
+        "pearson_r": 0.8141118169187437
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 31.746437072753906,
+        "rmse": 111.36034393310547,
+        "mape_percent": 17.448959350585938,
+        "r2": 0.471705849163787,
+        "pearson_r": 0.7376589073856916
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 27.167434692382812,
+        "rmse": 80.79356384277344,
+        "mape_percent": 17.281538009643555,
+        "r2": 0.5905722945544362,
+        "pearson_r": 0.7986829787404914
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 108.63898468017578,
+        "rmse": 217.64962768554688,
+        "mape_percent": 24.22254753112793,
+        "r2": 0.7685800525960154,
+        "pearson_r": 0.8842174568629907
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 104.07230377197266,
+        "rmse": 175.64808654785156,
+        "mape_percent": 23.680315017700195,
+        "r2": 0.8046756368222624,
+        "pearson_r": 0.9043510318531286
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5301676469385819,
+      "candidate": {
+        "name": "mpnn_cap_medium",
+        "material_interaction": "mpnn",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.08,
+        "feature_noise": 0.015,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.35,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.85,
+            "energy_vol": 0.85,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.12,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    },
+    {
+      "returncode": 0,
+      "runtime_sec": 351.60577869415283,
+      "stdout_tail": "[model 1/1] [epoch 007] train=80.42682 val=4.23008 mse=1.04661 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 008] train=142.62162 val=4.16748 mse=1.03599 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 009] train=61.05893 val=4.16091 mse=0.98093 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 010] train=728.51094 val=4.13202 mse=0.99069 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 011] train=660.33392 val=4.12534 mse=0.98542 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 012] train=317.09277 val=4.13748 mse=0.99419 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 013] train=291.55731 val=4.14380 mse=0.96972 lr=7.00e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 014] train=129.68983 val=4.08625 mse=0.94380 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 015] train=76.89707 val=4.08683 mse=0.94428 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 016] train=258.52152 val=4.16558 mse=0.93609 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 017] train=241.48394 val=4.07845 mse=0.93666 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 018] train=332.68653 val=4.10755 mse=0.95689 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 019] train=1126.12010 val=4.07934 mse=0.92615 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 020] train=115.57447 val=4.04069 mse=0.94708 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 021] train=199.03698 val=12.58491 mse=0.93412 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 022] train=538.01821 val=5.37759 mse=0.93166 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[model 1/1] [epoch 023] train=295.83048 val=4.04672 mse=0.95227 lr=3.50e-04 skip_non_finite(train/val)=0/0\n[eval/raw] R2=0.4586 MAE=180.0884 RMSE=508.4754 MAPE%=25.25 PearsonR=0.8050\n[done] reports generated at: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\figures\\20260227_092736\n[done] summary: C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+      "stderr_tail": "",
+      "summary_timestamp": "20260227_092736",
+      "iid_raw_overall": {
+        "mae": 180.08843994140625,
+        "rmse": 508.4753723144531,
+        "mape_percent": 25.254518508911133,
+        "r2": 0.458629526622616,
+        "pearson_r": 0.8049705010882179
+      },
+      "ood_raw_overall": {
+        "mae": 182.0358428955078,
+        "rmse": 471.7472839355469,
+        "mape_percent": 25.270429611206055,
+        "r2": 0.4802525840903641,
+        "pearson_r": 0.8228213499595658
+      },
+      "iid_raw_capacity_grav": {
+        "mae": 32.16447067260742,
+        "rmse": 113.01197814941406,
+        "mape_percent": 17.981964111328125,
+        "r2": 0.45591889559466536,
+        "pearson_r": 0.7280263768059144
+      },
+      "ood_raw_capacity_grav": {
+        "mae": 26.967926025390625,
+        "rmse": 82.24398040771484,
+        "mape_percent": 16.90258026123047,
+        "r2": 0.5757401650265305,
+        "pearson_r": 0.7900312386802021
+      },
+      "iid_raw_capacity_vol": {
+        "mae": 100.26026153564453,
+        "rmse": 196.36785888671875,
+        "mape_percent": 22.35213279724121,
+        "r2": 0.8116239192148407,
+        "pearson_r": 0.9122952348275356
+      },
+      "ood_raw_capacity_vol": {
+        "mae": 96.72235107421875,
+        "rmse": 157.6650848388672,
+        "mape_percent": 22.97749137878418,
+        "r2": 0.8426232089830996,
+        "pearson_r": 0.9267645430754805
+      },
+      "iid_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "ood_physics": {
+        "capacity_violation_rate": 0.0,
+        "theoretical_capacity_valid_fraction": 0.0,
+        "voltage_above_4p4_rate": 0.0
+      },
+      "selection_score": 0.5208591356694756,
+      "candidate": {
+        "name": "gatv2_cap_light_lowaug",
+        "material_interaction": "gatv2",
+        "num_gnn_layers": 3,
+        "hidden_dim": 128,
+        "dropout": 0.2,
+        "enable_graph_context": true,
+        "lr": 0.0007,
+        "weight_decay": 5e-05,
+        "feature_dropout": 0.03,
+        "feature_noise": 0.005,
+        "loss_override": {
+          "regression_target_weights": {
+            "average_voltage": 1.0,
+            "capacity_grav": 1.2,
+            "capacity_vol": 1.0,
+            "energy_grav": 0.9,
+            "energy_vol": 0.9,
+            "stability_charge": 1.0,
+            "stability_discharge": 1.0
+          },
+          "capacity_grav_huber_weight": 0.08,
+          "capacity_grav_huber_beta": 0.25
+        }
+      }
+    }
+  ],
+  "recommended_final_config": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_config_capacity_rescue_best.json",
+  "recommended_final_candidate": {
+    "name": "tr_baseline",
+    "material_interaction": "transformer",
+    "num_gnn_layers": 2,
+    "hidden_dim": 128,
+    "dropout": 0.15,
+    "enable_graph_context": true,
+    "lr": 0.0008,
+    "weight_decay": 5e-05,
+    "feature_dropout": 0.1,
+    "feature_noise": 0.02,
+    "loss_override": {}
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "rows": 6683,
+  "corrections": {
+    "average_voltage_was_clipped": 1061,
+    "capacity_grav_was_clipped": 68,
+    "capacity_vol_was_clipped": 68,
+    "stability_charge_was_clipped": 34,
+    "stability_discharge_was_clipped": 34,
+    "max_delta_volume_was_clipped": 68,
+    "energy_grav_inconsistent": 908,
+    "energy_vol_inconsistent": 903,
+    "energy_grav_negative": 628,
+    "energy_vol_negative": 628
+  },
+  "noise_band_counts": {
+    "low": 5748,
+    "high": 681,
+    "medium": 254
+  },
+  "target_quantiles_after_curation": {
+    "average_voltage": {
+      "q01": 0.5,
+      "q50": 2.733554456551705,
+      "q99": 5.705894160825005
+    },
+    "capacity_grav": {
+      "q01": 20.290943356188865,
+      "q50": 119.06842981345451,
+      "q99": 920.1780572576139
+    },
+    "capacity_vol": {
+      "q01": 91.37480004222135,
+      "q50": 480.4135176251282,
+      "q99": 3210.6380623454547
+    },
+    "energy_grav": {
+      "q01": 19.08645125238221,
+      "q50": 307.226524137071,
+      "q99": 1362.3539538408215
+    },
+    "energy_vol": {
+      "q01": 92.29081194111188,
+      "q50": 1156.813628492479,
+      "q99": 5198.987453830314
+    },
+    "stability_charge": {
+      "q01": 0.0,
+      "q50": 0.065015927045452,
+      "q99": 1.1867374861336288
+    },
+    "stability_discharge": {
+      "q01": 0.0,
+      "q50": 0.06918041571429,
+      "q99": 0.8985296387468746
+    },
+    "max_delta_volume": {
+      "q01": 0.0007570774932226801,
+      "q50": 0.05237444872125,
+      "q99": 5.888852886416839
+    }
+  },
+  "normalization_policy": {
+    "type": "column_adaptive_affine",
+    "normalized_columns": {
+      "average_voltage_norm": {
+        "method": "standard_z",
+        "center": 2.6236078665968914,
+        "scale": 1.4674710743252282,
+        "mean": 2.6236078665968914,
+        "std": 1.4674710743252282,
+        "median": 2.733554456551705,
+        "iqr": 2.461288207390812,
+        "skew": 0.027752819970366403
+      },
+      "capacity_grav_norm": {
+        "method": "robust_z",
+        "center": 119.06842981345451,
+        "scale": 66.74509495223845,
+        "mean": 151.82436368923786,
+        "std": 150.92201095561018,
+        "median": 119.06842981345451,
+        "iqr": 90.03913309056966,
+        "skew": 5.137350776565651
+      },
+      "capacity_vol_norm": {
+        "method": "robust_z",
+        "center": 480.4135176251282,
+        "scale": 270.8458704480816,
+        "mean": 587.355824249211,
+        "std": 484.0973855374298,
+        "median": 480.4135176251282,
+        "iqr": 365.37107923446206,
+        "skew": 3.471134306224712
+      },
+      "energy_grav_norm": {
+        "method": "robust_z",
+        "center": 307.226524137071,
+        "scale": 289.21882596421705,
+        "mean": 369.7435637812078,
+        "std": 305.64865482214304,
+        "median": 307.226524137071,
+        "iqr": 390.15619622572876,
+        "skew": 1.9289547019029827
+      },
+      "energy_vol_norm": {
+        "method": "robust_z",
+        "center": 1156.813628492479,
+        "scale": 1039.8055314105372,
+        "mean": 1405.382267927141,
+        "std": 1127.217123471742,
+        "median": 1156.813628492479,
+        "iqr": 1402.6976618728147,
+        "skew": 1.6158587834985698
+      },
+      "stability_charge_norm": {
+        "method": "robust_z",
+        "center": 0.065015927045452,
+        "scale": 0.07304636119716049,
+        "mean": 0.11460705691759482,
+        "std": 0.23291211767128472,
+        "median": 0.065015927045452,
+        "iqr": 0.0985395412549695,
+        "skew": 7.069363540930405
+      },
+      "stability_discharge_norm": {
+        "method": "robust_z",
+        "center": 0.06918041571429,
+        "scale": 0.0928314815212109,
+        "mean": 0.1218625064749954,
+        "std": 0.18004620273964236,
+        "median": 0.06918041571429,
+        "iqr": 0.1252296685721135,
+        "skew": 4.653772211236932
+      },
+      "max_delta_volume_norm": {
+        "method": "robust_z",
+        "center": 0.05237444872125,
+        "scale": 0.06207727439182283,
+        "mean": 0.22116123632112344,
+        "std": 1.0870738026625615,
+        "median": 0.05237444872125,
+        "iqr": 0.083742243154569,
+        "skew": 8.81450547119989
+      }
+    }
+  }
+}

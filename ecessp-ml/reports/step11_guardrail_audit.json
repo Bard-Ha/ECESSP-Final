@@ -1,0 +1,159 @@
+{
+  "step": 11,
+  "inputs": {
+    "training_summary": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.json",
+    "discovery_validation": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\discovery_validation_suite.json"
+  },
+  "prediction_pipeline": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "iid_overall_r2",
+        "value": 0.48603869964454205,
+        "threshold": 0.25,
+        "comparator": ">=",
+        "passed": true
+      },
+      {
+        "name": "ood_overall_r2",
+        "value": 0.5091586401244352,
+        "threshold": 0.25,
+        "comparator": ">=",
+        "passed": true
+      },
+      {
+        "name": "iid_voltage_r2",
+        "value": 0.9488575803119618,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "passed": true
+      },
+      {
+        "name": "iid_capacity_vol_r2",
+        "value": 0.833699629748244,
+        "threshold": 0.7,
+        "comparator": ">=",
+        "passed": true
+      },
+      {
+        "name": "iid_capacity_grav_r2",
+        "value": 0.4940819043694037,
+        "threshold": 0.0,
+        "comparator": ">=",
+        "passed": true
+      },
+      {
+        "name": "iid_capacity_violation_rate",
+        "value": 0.0,
+        "threshold": 0.0,
+        "comparator": "<=",
+        "passed": true
+      },
+      {
+        "name": "ood_capacity_violation_rate",
+        "value": 0.0,
+        "threshold": 0.0,
+        "comparator": "<=",
+        "passed": true
+      },
+      {
+        "name": "iid_voltage_above_4p4_rate",
+        "value": 0.0,
+        "threshold": 0.0,
+        "comparator": "<=",
+        "passed": true
+      },
+      {
+        "name": "ood_voltage_above_4p4_rate",
+        "value": 0.0,
+        "threshold": 0.0,
+        "comparator": "<=",
+        "passed": true
+      }
+    ],
+    "failed_checks": []
+  },
+  "discovery_pipeline": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "hit_rate_at_k",
+        "value": 0.0,
+        "threshold": 0.65,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "constraint_validity_rate",
+        "value": 0.0,
+        "threshold": 0.7,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "physics_violation_rate",
+        "value": 0.0,
+        "threshold": 0.05,
+        "comparator": "<=",
+        "passed": true
+      },
+      {
+        "name": "novelty_mean",
+        "value": 0.0,
+        "threshold": 0.1,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "ood_acceptance_rate",
+        "value": 0.0,
+        "threshold": 0.1,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "counterfactual_pass_rate",
+        "value": 1.0,
+        "threshold": 0.8,
+        "comparator": ">=",
+        "passed": true
+      }
+    ],
+    "failed_checks": [
+      {
+        "name": "hit_rate_at_k",
+        "value": 0.0,
+        "threshold": 0.65,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "constraint_validity_rate",
+        "value": 0.0,
+        "threshold": 0.7,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "novelty_mean",
+        "value": 0.0,
+        "threshold": 0.1,
+        "comparator": ">=",
+        "passed": false
+      },
+      {
+        "name": "ood_acceptance_rate",
+        "value": 0.0,
+        "threshold": 0.1,
+        "comparator": ">=",
+        "passed": false
+      }
+    ]
+  },
+  "overall_passed": false,
+  "recommendations": [
+    "Reduce objective-attraction strength or add Pareto ranking to restore novelty under constraints.",
+    "Tune latent optimization steps/diversity weight to improve top-k target hit rate.",
+    "Tighten hard-gate projection and material validity thresholds before ranking."
+  ]
+}

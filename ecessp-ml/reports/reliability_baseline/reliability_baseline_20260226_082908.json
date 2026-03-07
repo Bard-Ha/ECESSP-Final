@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-02-26T08:29:08.939911+00:00",
+  "method": "fastapi_testclient_baseline_probe",
+  "samples": {
+    "total_requests": 22,
+    "total_failures": 8,
+    "prediction_responses_scored": 0,
+    "discovery_responses_scored": 8
+  },
+  "api": {
+    "overall_error_rate_percent": 36.36363636363637,
+    "endpoint_metrics": {
+      "health": {
+        "count": 5.0,
+        "failed": 0.0,
+        "error_rate_percent": 0.0,
+        "p50_latency_ms": 3.0266999965533614,
+        "p95_latency_ms": 6.51320000179112
+      },
+      "materials": {
+        "count": 1.0,
+        "failed": 0.0,
+        "error_rate_percent": 0.0,
+        "p50_latency_ms": 81.90749993082136,
+        "p95_latency_ms": 81.90749993082136
+      },
+      "discover": {
+        "count": 8.0,
+        "failed": 0.0,
+        "error_rate_percent": 0.0,
+        "p50_latency_ms": 34.738600021228194,
+        "p95_latency_ms": 12729.572399985045
+      },
+      "predict": {
+        "count": 8.0,
+        "failed": 8.0,
+        "error_rate_percent": 100.0,
+        "p50_latency_ms": 30.210400000214577,
+        "p95_latency_ms": 43.88410004321486
+      }
+    }
+  },
+  "model_reliability": {
+    "valid_candidate_rate_prediction": 0.0,
+    "valid_candidate_rate_discovery": 0.0,
+    "uncertainty_calibration_brier_proxy": 0.0,
+    "calibration_bins": []
+  },
+  "notes": [
+    "Calibration metric is a proxy computed from confidence_score vs diagnostics.valid.",
+    "This baseline is intended for trend tracking after reliability hardening changes."
+  ]
+}

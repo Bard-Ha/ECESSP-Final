@@ -1,0 +1,56 @@
+[
+  {
+    "prototype_name": "Layered Oxide (LiMO2, NaMO2)",
+    "family": "Layered oxide",
+    "general_formula_pattern": "A1M1O2",
+    "allowed_substitution_elements": ["Mn", "Fe", "Co", "Ni", "V", "Cr", "Ti", "Cu"],
+    "supported_working_ions": ["Li", "Na", "K"],
+    "diffusion_dimensionality": "2D",
+    "typical_voltage_range": [2.5, 4.4]
+  },
+  {
+    "prototype_name": "Spinel (AB2O4)",
+    "family": "Spinel",
+    "general_formula_pattern": "A1M2O4",
+    "allowed_substitution_elements": ["Mn", "Fe", "Co", "Ni", "V", "Cr", "Ti"],
+    "supported_working_ions": ["Li", "Na", "Mg", "Zn"],
+    "diffusion_dimensionality": "3D",
+    "typical_voltage_range": [2.0, 4.3]
+  },
+  {
+    "prototype_name": "Olivine (LiMPO4)",
+    "family": "Olivine",
+    "general_formula_pattern": "A1M1P1O4",
+    "allowed_substitution_elements": ["Mn", "Fe", "Co", "Ni", "V", "Cr", "Ti"],
+    "supported_working_ions": ["Li", "Na"],
+    "diffusion_dimensionality": "1D",
+    "typical_voltage_range": [2.5, 4.2]
+  },
+  {
+    "prototype_name": "NASICON (A3M2(PO4)3)",
+    "family": "NASICON",
+    "general_formula_pattern": "A3M2P3O12",
+    "allowed_substitution_elements": ["V", "Ti", "Fe", "Mn", "Cr"],
+    "supported_working_ions": ["Na", "Li", "Mg", "Ca"],
+    "diffusion_dimensionality": "3D",
+    "typical_voltage_range": [2.0, 3.8]
+  },
+  {
+    "prototype_name": "Prussian Blue",
+    "family": "Prussian Blue",
+    "general_formula_pattern": "AxM[M'(CN)6]y",
+    "allowed_substitution_elements": ["Mn", "Fe", "Co", "Ni", "Cu"],
+    "supported_working_ions": ["Na", "K", "Li", "Mg", "Ca"],
+    "diffusion_dimensionality": "3D",
+    "typical_voltage_range": [2.5, 4.0]
+  },
+  {
+    "prototype_name": "Polyanion Framework",
+    "family": "Polyanion framework",
+    "general_formula_pattern": "A-M-X-O framework",
+    "allowed_substitution_elements": ["Mn", "Fe", "Co", "Ni", "V", "Cr", "Ti", "Cu"],
+    "supported_working_ions": ["Li", "Na", "K", "Mg", "Ca", "Zn", "Al", "Y"],
+    "diffusion_dimensionality": "3D",
+    "typical_voltage_range": [2.0, 4.5]
+  }
+]

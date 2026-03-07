@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  ecessp-ml:
+    build:
+      context: ./ecessp-ml
+    container_name: ecessp-ml
+    restart: unless-stopped
+    environment:
+      PORT: 8000
+      USE_GPU: "0"
+      RATE_LIMIT_ENABLED: "1"
+      RATE_LIMIT_REQUESTS: "120"
+      RATE_LIMIT_WINDOW_SEC: "60"
+      REQUEST_TIMEOUT_SEC: "60"
+      # ECESSP_API_KEY: "change-me"
+      # ECESSP_BEARER_TOKEN: "change-me"
+    ports:
+      # Keep backend private to host; frontend reaches it via service DNS.
+      - "127.0.0.1:8000:8000"
+
+  ecessp-frontend:
+    build:
+      context: ./ecessp-frontend
+    container_name: ecessp-frontend
+    restart: unless-stopped
+    depends_on:
+      - ecessp-ml
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 5000
+      ECESSP_ML_URL: http://ecessp-ml:8000
+      AUTH_ENABLED: "0"
+      AUTH_USERNAME: "admin"
+      AUTH_PASSWORD: "change-me"
+      AUTH_TOKEN_TTL_SEC: "43200"
+      PROXY_TIMEOUT_MS: "30000"
+      PROXY_RETRIES: "2"
+      # ECESSP_API_KEY: "change-me"
+      # ECESSP_BEARER_TOKEN: "change-me"
+    ports:
+      - "5000:5000"

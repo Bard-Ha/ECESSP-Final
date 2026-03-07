@@ -1,0 +1,38 @@
+{
+  "timestamp_epoch_sec": 1772169304,
+  "gate_passed": true,
+  "gate_failure_reasons": [],
+  "selection_score": 0.5616898939080351,
+  "selected_main_checkpoint": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_3_best_20260226_230623.pt",
+  "selected_hgt_checkpoint": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\hgt_best_20260227_074850.pt",
+  "promoted_summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary.promoted.json",
+  "summary_in_place_updated": true,
+  "three_model_manifest_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_manifest.json",
+  "final_manifest_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\final_family_ensemble_manifest.json",
+  "pruned": {
+    "enabled": true,
+    "removed_count": 16,
+    "removed_paths": [
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260226_150113.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260226_201701.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260226_213835.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260226_230623.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_1_best_20260226_201701.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_1_best_20260226_213835.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_1_best_20260226_230623.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_2_best_20260226_201701.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_2_best_20260226_213835.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_2_best_20260226_230623.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_3_best_20260226_201701.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_3_best_20260226_213835.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260226_201701.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260226_213835.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260226_230623.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\hgt_best_20260226_150929.pt"
+    ],
+    "kept_paths": [
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_3_best_20260226_230623.pt",
+      "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\hgt_best_20260227_074850.pt"
+    ]
+  }
+}

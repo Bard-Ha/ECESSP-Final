@@ -1,0 +1,46 @@
+{
+  "ranked": [
+    {
+      "name": "tr_ctx1_l2_h128",
+      "family": "masked_gnn",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_2_best_20260227_093511.pt",
+      "score": 0.5583298303198276,
+      "source": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_manifest.json",
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\tr_ctx1_l2_h128_training_summary.json",
+      "material_interaction": "transformer",
+      "weight": 0.27712381926102103
+    },
+    {
+      "name": "mpnn_ctx1_l3_h128",
+      "family": "masked_gnn",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260227_120033.pt",
+      "score": 0.5527819839531523,
+      "source": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_manifest.json",
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\mpnn_ctx1_l3_h128_training_summary.json",
+      "material_interaction": "mpnn",
+      "weight": 0.27406593456033945
+    },
+    {
+      "name": "gatv2_ctx1_l3_h128",
+      "family": "masked_gnn",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260227_104040.pt",
+      "score": 0.551453022655461,
+      "source": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_manifest.json",
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\gatv2_ctx1_l3_h128_training_summary.json",
+      "material_interaction": "gatv2",
+      "weight": 0.2733384557397204
+    },
+    {
+      "name": "hetero_hgt",
+      "family": "hetero_hgt",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\hgt_best_20260227_170840.pt",
+      "score": 0.3298367725657652,
+      "source": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary_hgt.json",
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary_hgt.json",
+      "material_interaction": "hgt",
+      "weight": 0.17547179043891917
+    }
+  ],
+  "masked_manifest": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_manifest.json",
+  "hgt_summary": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_summary_hgt.json"
+}

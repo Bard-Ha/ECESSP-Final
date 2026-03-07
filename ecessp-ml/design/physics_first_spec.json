@@ -1,0 +1,182 @@
+{
+  "project_name": "Physics-First Generative Battery Discovery Engine",
+  "core_principle": "Physics and chemistry laws override machine learning predictions at all times. No prediction may violate stoichiometry, thermodynamics, electrochemical constraints, or full-cell mass balance.",
+  "fundamental_constants": {
+    "F": 96485,
+    "R": 8.314,
+    "T_default_K": 298.15,
+    "electron_charge_C": 1.602e-19,
+    "avogadro": 6.022e23
+  },
+  "electrochemical_laws": {
+    "faraday_law_capacity": "C_max (mAh/g) = (n * F) / (3.6 * M)",
+    "gibbs_voltage_relation": "DeltaG = -n F E",
+    "nernst_equation": "E = E0 - (RT / nF) * ln(Q)",
+    "energy_relation": "E_cell (Wh/kg) = V_avg * C_cell / 1000",
+    "power_relation": "P = V * I",
+    "mass_balance_constraint": "Total_charge_cathode = Total_charge_anode",
+    "full_cell_capacity": "C_cell = 1 / ((1/C_cathode) + (NP_ratio / C_anode))",
+    "density_relation": "C_vol = C_grav * density",
+    "diffusion_time_scale": "tau ~ L^2 / D",
+    "arrhenius_relation": "k = A * exp(-Ea / RT)"
+  },
+  "hard_physical_limits": {
+    "max_gravimetric_energy_Wh_per_kg": 450,
+    "max_volumetric_energy_Wh_per_L": 1200,
+    "max_gravimetric_capacity_mAh_per_g": 350,
+    "max_voltage_liquid_electrolyte_V": 4.4,
+    "max_voltage_sodium_liquid_V": 4.3,
+    "minimum_stable_voltage_V": 1.0
+  },
+  "oxidation_state_solver": {
+    "required_capabilities": [
+      "parse arbitrary chemical formulas",
+      "assign allowed oxidation states per element",
+      "solve charge neutrality algebraically",
+      "identify redox-active elements",
+      "determine maximum electron exchange per formula unit",
+      "detect unrealistic oxidation states"
+    ],
+    "rules": [
+      "no transition metal oxidation state beyond known stable chemistry",
+      "no fractional charge imbalance",
+      "reject if no valid oxidation solution"
+    ]
+  },
+  "theoretical_capacity_module": {
+    "algorithm": [
+      "compute molar mass M",
+      "compute maximum redox electrons n",
+      "calculate C_max via Faraday law",
+      "clip ML predicted capacity to C_max",
+      "if ML > C_max: apply strong physics penalty"
+    ],
+    "no_override_allowed": true
+  },
+  "voltage_prediction_constraints": {
+    "must_depend_on": [
+      "redox couple identity",
+      "transition metal electronegativity",
+      "polyanion inductive effect",
+      "coordination environment"
+    ],
+    "physics_regularization": [
+      "use DeltaG = -nFE consistency",
+      "penalize deviation from expected redox potentials",
+      "restrict voltage within electrolyte stability window"
+    ],
+    "ood_penalty": true
+  },
+  "electrolyte_stability_model": {
+    "must_check": [
+      "electrochemical window",
+      "oxidative stability limit",
+      "reductive stability limit"
+    ],
+    "reject_if_voltage_exceeds_window": true
+  },
+  "full_cell_model": {
+    "must_include": [
+      "cathode mass",
+      "anode mass",
+      "inactive mass fraction",
+      "separator mass",
+      "current collectors"
+    ],
+    "active_mass_fraction_range": [
+      0.6,
+      0.75
+    ],
+    "np_ratio_range": [
+      1.05,
+      1.15
+    ],
+    "energy_must_be_derived_not_predicted": true,
+    "reject_if_energy_exceeds_caps": true
+  },
+  "structural_stability_constraints": {
+    "check_volume_change_percent": "<= 10-15% preferred",
+    "penalize_large_volume_expansion": true,
+    "stability_proxy": "formation_energy_prediction",
+    "reject_highly_positive_formation_energy": true
+  },
+  "uncertainty_and_ood": {
+    "method": "deep_ensemble_or_mc_dropout",
+    "compute_prediction_variance": true,
+    "reject_if_uncertainty_above_threshold": true,
+    "detect_distance_from_training_distribution": true
+  },
+  "novelty_engine": {
+    "representation": "element_fraction_vector + learned_embedding",
+    "similarity_metric": "cosine_similarity",
+    "novelty_score": "1 - max_similarity_to_dataset",
+    "reject_if_similarity_above": 0.95,
+    "publishable_threshold": 0.2,
+    "framework_match_detection": true
+  },
+  "generative_engine": {
+    "continuous_stoichiometry_space": true,
+    "mutation_operations": [
+      "transition_metal_partial_substitution",
+      "ratio_perturbation",
+      "polyanion_mixing",
+      "high_entropy_compositions",
+      "multivalent_exploration"
+    ],
+    "valence_balance_check": true,
+    "structural_filter": true
+  },
+  "multi_objective_optimization": {
+    "weights": {
+      "energy_density": 0.3,
+      "stability": 0.2,
+      "novelty": 0.2,
+      "abundance_cost": 0.2,
+      "safety": 0.1
+    },
+    "use_pareto_front": true,
+    "remove_duplicate_solutions": true
+  },
+  "training_protocol": {
+    "separate_prediction_heads": [
+      "capacity",
+      "voltage",
+      "formation_energy",
+      "volume_change"
+    ],
+    "loss_function": {
+      "regression_loss": "MSE",
+      "capacity_violation_penalty": "very_strong",
+      "voltage_violation_penalty": "very_strong",
+      "energy_cap_violation_penalty": "hard_reject",
+      "uncertainty_regularization": true,
+      "physics_consistency_loss": true
+    },
+    "must_reproduce_known_benchmarks": [
+      "LiFePO4 ~160 mAh/g",
+      "NaFePO4 ~150 mAh/g",
+      "NMC ~200 mAh/g",
+      "Sodium-ion full cell ~150 Wh/kg"
+    ]
+  },
+  "output_requirements": {
+    "each_candidate_must_report": [
+      "formula",
+      "oxidation_states",
+      "molar_mass",
+      "n_electrons",
+      "C_theoretical",
+      "C_predicted_clipped",
+      "voltage",
+      "cell_capacity",
+      "cell_energy",
+      "volume_change",
+      "formation_energy",
+      "novelty_score",
+      "uncertainty",
+      "constraint_validation_report"
+    ],
+    "reject_if_any_physics_violation": true
+  },
+  "final_standard": "The system must generate only chemically plausible, physically bounded, quantitatively novel battery systems suitable for peer-reviewed publication. No inflated capacities. No impossible voltages. No unconstrained extrapolation."
+}

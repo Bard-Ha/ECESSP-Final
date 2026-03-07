@@ -1,0 +1,2 @@
+candidate_id,dft_converged,dft_voltage_v,dft_volume_change_ratio,dft_decomposition_energy_ev_atom,dft_diffusion_barrier_ev,dft_insertion_stable,notes
+demo_li_001,true,2.42,0.09,0.05,0.45,true,Example row; replace with actual DFT output.

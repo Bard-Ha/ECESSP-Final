@@ -1,0 +1,71 @@
+{
+  "report_type": "ecessp_dft_experiment_validation_protocol",
+  "version": "v1.0.0",
+  "as_of_date": "2026-02-25",
+  "scope": {
+    "battery_type": "insertion_only",
+    "modes": ["predictive", "generative", "cif_conditioned"],
+    "objective": "Quantify model confidence with external DFT and lab evidence before scale-up claims."
+  },
+  "required_inputs": {
+    "predictions_csv": "reports/validation_protocol/templates/predictions_manifest_template.csv",
+    "dft_results_csv": "reports/validation_protocol/templates/dft_results_template.csv",
+    "experiment_results_csv": "reports/validation_protocol/templates/experiment_results_template.csv"
+  },
+  "stage_gates": {
+    "dft": {
+      "max_abs_voltage_error_v": 0.35,
+      "max_volume_change_ratio": 0.2,
+      "max_decomposition_energy_ev_atom": 0.08,
+      "max_diffusion_barrier_ev": 0.65,
+      "require_converged": true,
+      "require_insertion_stable": true
+    },
+    "experiment": {
+      "max_abs_voltage_error_v": 0.4,
+      "min_capacity_fraction_vs_prediction": 0.7,
+      "min_capacity_retention_50cyc_pct": 80.0,
+      "min_initial_coulombic_efficiency_pct": 90.0,
+      "require_reversible_insertion": true
+    }
+  },
+  "program_acceptance": {
+    "minimum_sample_sizes": {
+      "dft_candidates": 20,
+      "experiment_candidates": 8
+    },
+    "minimum_pass_rates": {
+      "dft": 0.55,
+      "experiment": 0.5
+    },
+    "maximum_error_metrics": {
+      "dft_voltage_mae_v": 0.25,
+      "experiment_voltage_mae_v": 0.3
+    },
+    "minimum_calibration": {
+      "uncertainty_vs_abs_voltage_error_pearson_r": 0.2
+    }
+  },
+  "confidence_index": {
+    "range": [0.0, 100.0],
+    "weights": {
+      "dft_pass_rate": 0.35,
+      "experiment_pass_rate": 0.35,
+      "dft_voltage_mae": 0.15,
+      "experiment_voltage_mae": 0.1,
+      "uncertainty_calibration": 0.05
+    },
+    "tiers": {
+      "high": 85.0,
+      "medium": 70.0,
+      "low": 0.0
+    }
+  },
+  "decision_policy": {
+    "ready_for_scale_up_requires": [
+      "all critical program acceptance gates pass",
+      "confidence tier is at least medium"
+    ],
+    "failure_action": "Restrict claims to exploratory mode and route top uncertainty/high-value candidates into active-learning queue."
+  }
+}

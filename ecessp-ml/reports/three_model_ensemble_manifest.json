@@ -1,0 +1,36 @@
+{
+  "version": "v1",
+  "created_at_epoch_sec": 1772200960,
+  "source": "tools/train_three_model_ensemble.py",
+  "base_config": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\training_config_capacity_rescue_best.json",
+  "models": [
+    {
+      "name": "tr_ctx1_l2_h128",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_2_best_20260227_093511.pt",
+      "weight": 0.3360998641981476,
+      "material_interaction": "transformer",
+      "selection_score": 0.5583298303198276,
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\tr_ctx1_l2_h128_training_summary.json",
+      "summary_timestamp": "20260227_093511"
+    },
+    {
+      "name": "mpnn_ctx1_l3_h128",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260227_120033.pt",
+      "weight": 0.3323912164342228,
+      "material_interaction": "mpnn",
+      "selection_score": 0.5527819839531523,
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\mpnn_ctx1_l3_h128_training_summary.json",
+      "summary_timestamp": "20260227_120033"
+    },
+    {
+      "name": "gatv2_ctx1_l3_h128",
+      "checkpoint_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_0_best_20260227_104040.pt",
+      "weight": 0.33150891936762966,
+      "material_interaction": "gatv2",
+      "selection_score": 0.551453022655461,
+      "summary_path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\three_model_ensemble_trials\\gatv2_ctx1_l3_h128_training_summary.json",
+      "summary_timestamp": "20260227_104040"
+    }
+  ],
+  "primary_model": "tr_ctx1_l2_h128"
+}

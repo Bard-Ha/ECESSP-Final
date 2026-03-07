@@ -1,0 +1,47 @@
+.venv
+__pycache__
+**/__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Exclude bulk datasets from deployment context by default.
+# Keep only the processed files referenced by the live runtime.
+data
+!data/processed/
+!data/processed/material_catalog.csv
+!data/processed/batteries_parsed.csv
+!data/processed/batteries_parsed_curated.csv
+!data/processed/batteries_ml_curated.csv
+
+# Local scripts/tests not required by runtime container
+tests
+tools
+scripts
+
+# Exclude bulky report artifacts except runtime-required metadata/models
+reports/figures
+reports/diagrams
+reports/architecture_sweep_trials
+reports/three_model_ensemble_trials
+reports/step12_capacity_rescue_trials
+reports/validation_protocol
+reports/*.md
+reports/*_results.json
+reports/*_trials.json
+
+# Keep runtime files used by backend/config.py and active-learning services
+!reports/models/
+!reports/models/*.pt
+!reports/training_summary.json
+!reports/final_family_ensemble_manifest.json
+!reports/three_model_ensemble_manifest.json
+!reports/active_learning_queue.jsonl
+!reports/v3_*.json
+!reports/v3_*.jsonl

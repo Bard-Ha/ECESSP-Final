@@ -1,0 +1,134 @@
+{
+  "report_type": "ecessp_dft_experiment_validation_report",
+  "generated_at_utc": "2026-02-25T16:05:23.350473+00:00",
+  "protocol": {
+    "path": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\validation_protocol\\dft_experiment_validation_protocol_v1.json",
+    "version": "v1.0.0"
+  },
+  "inputs": {
+    "predictions_csv": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\validation_protocol\\templates\\predictions_manifest_template.csv",
+    "dft_csv": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\validation_protocol\\templates\\dft_results_template.csv",
+    "experiment_csv": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\validation_protocol\\templates\\experiment_results_template.csv",
+    "prediction_count": 1,
+    "dft_rows": 1,
+    "experiment_rows": 1
+  },
+  "stage_metrics": {
+    "dft": {
+      "attempted": 1,
+      "passed": 1,
+      "pass_rate": 1.0,
+      "voltage_mae_v": 0.08000000000000007,
+      "records": [
+        {
+          "candidate_id": "demo_li_001",
+          "pass": true,
+          "reasons": [],
+          "abs_voltage_error_v": 0.08000000000000007,
+          "prediction": {
+            "predicted_voltage_v": 2.5,
+            "predicted_uncertainty_penalty": 0.18
+          },
+          "dft": {
+            "dft_converged": true,
+            "dft_insertion_stable": true,
+            "dft_voltage_v": 2.42,
+            "dft_volume_change_ratio": 0.09,
+            "dft_decomposition_energy_ev_atom": 0.05,
+            "dft_diffusion_barrier_ev": 0.45
+          }
+        }
+      ],
+      "skipped_missing_prediction": 0
+    },
+    "experiment": {
+      "attempted": 1,
+      "passed": 1,
+      "pass_rate": 1.0,
+      "voltage_mae_v": 0.1299999999999999,
+      "records": [
+        {
+          "candidate_id": "demo_li_001",
+          "pass": true,
+          "reasons": [],
+          "abs_voltage_error_v": 0.1299999999999999,
+          "prediction": {
+            "predicted_voltage_v": 2.5,
+            "predicted_capacity_mah_g": 280.0,
+            "predicted_uncertainty_penalty": 0.18
+          },
+          "experiment": {
+            "experiment_completed": true,
+            "exp_insertion_reversible": true,
+            "exp_voltage_v": 2.37,
+            "exp_capacity_mah_g": 250.0,
+            "exp_capacity_retention_50cyc_pct": 88.0,
+            "exp_initial_coulombic_efficiency_pct": 93.0
+          }
+        }
+      ],
+      "skipped_missing_prediction": 0
+    }
+  },
+  "calibration": {
+    "dft_uncertainty_vs_abs_voltage_error_pearson_r": null,
+    "experiment_uncertainty_vs_abs_voltage_error_pearson_r": null,
+    "combined_uncertainty_vs_abs_voltage_error_pearson_r": null,
+    "n_pairs_dft": 1,
+    "n_pairs_experiment": 1
+  },
+  "acceptance_gates": {
+    "min_dft_sample_size": {
+      "passed": false,
+      "value": 1,
+      "target_min": 20
+    },
+    "min_experiment_sample_size": {
+      "passed": false,
+      "value": 1,
+      "target_min": 8
+    },
+    "min_dft_pass_rate": {
+      "passed": true,
+      "value": 1.0,
+      "target_min": 0.55
+    },
+    "min_experiment_pass_rate": {
+      "passed": true,
+      "value": 1.0,
+      "target_min": 0.5
+    },
+    "max_dft_voltage_mae": {
+      "passed": true,
+      "value": 0.08000000000000007,
+      "target_max": 0.25
+    },
+    "max_experiment_voltage_mae": {
+      "passed": true,
+      "value": 0.1299999999999999,
+      "target_max": 0.3
+    },
+    "min_uncertainty_calibration_corr": {
+      "passed": false,
+      "value": null,
+      "target_min": 0.2,
+      "details": "Pearson r between predicted uncertainty penalty and observed absolute voltage error."
+    }
+  },
+  "confidence": {
+    "confidence_index_0_to_100": 95.0,
+    "tier": "high",
+    "component_scores": {
+      "dft_pass_rate_score": 1.0,
+      "experiment_pass_rate_score": 1.0,
+      "dft_voltage_mae_score": 1.0,
+      "experiment_voltage_mae_score": 1.0,
+      "uncertainty_calibration_score": 0.0
+    }
+  },
+  "decision": {
+    "ready_for_scale_up": false,
+    "critical_gates_passed": false,
+    "recommended_mode": "exploratory_active_learning_only"
+  }
+}
