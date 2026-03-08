@@ -11,6 +11,8 @@ from pathlib import Path
 from dataclasses import dataclass
 import logging
 
+from .path_utils import resolve_project_artifact_path
+
 logger = logging.getLogger(__name__)
 
 
@@ -111,9 +113,11 @@ def _resolve_runtime_checkpoint() -> Path:
                     ckpt = str(item.get("checkpoint_path", "")).strip()
                     if not ckpt:
                         continue
-                    p = Path(ckpt)
-                    if not p.is_absolute():
-                        p = (PROJECT_ROOT / p).resolve()
+                    p = resolve_project_artifact_path(
+                        ckpt,
+                        project_root=PROJECT_ROOT,
+                        preferred_dirs=(models_dir,),
+                    )
                     if p.exists() and p.is_file():
                         logger.info(
                             "Using masked checkpoint from ensemble manifest %s: %s",
@@ -127,9 +131,11 @@ def _resolve_runtime_checkpoint() -> Path:
 
     env_ckpt = os.getenv("ECESSP_CHECKPOINT", "").strip()
     if env_ckpt:
-        p = Path(env_ckpt)
-        if not p.is_absolute():
-            p = (PROJECT_ROOT / p).resolve()
+        p = resolve_project_artifact_path(
+            env_ckpt,
+            project_root=PROJECT_ROOT,
+            preferred_dirs=(models_dir,),
+        )
         if p.exists() and p.is_file():
             logger.info("Using checkpoint from ECESSP_CHECKPOINT: %s", p)
             return p
@@ -167,10 +173,12 @@ def _resolve_runtime_checkpoint() -> Path:
                     .get("r2", -1.0)
                 )
             summary_overall_r2 = overall_r2
-            best_ckpt = Path(str(summary.get("best_checkpoint", "")).strip())
+            best_ckpt = resolve_project_artifact_path(
+                str(summary.get("best_checkpoint", "")).strip(),
+                project_root=PROJECT_ROOT,
+                preferred_dirs=(models_dir,),
+            )
             if str(best_ckpt):
-                if not best_ckpt.is_absolute():
-                    best_ckpt = (PROJECT_ROOT / best_ckpt).resolve()
                 if best_ckpt.exists() and best_ckpt.is_file() and overall_r2 >= r2_gate:
                     logger.info("Using checkpoint from training summary: %s", best_ckpt)
                     return best_ckpt

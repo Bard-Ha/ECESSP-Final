@@ -23,6 +23,7 @@ import hashlib
 from ..runtime.context import get_runtime_context
 from ..runtime.latent_sampler import LatentSampler, GenerativeDiscoveryEngine
 from ..loaders.load_model import load_model as load_single_model
+from ..path_utils import resolve_project_artifact_path
 from design.system_template import BatterySystem
 from materials.role_inference import infer_material_roles_from_descriptors as infer_roles
 from design.system_generator import SystemGenerator
@@ -287,9 +288,11 @@ class EnhancedInferenceEngine:
                     if family == "hetero_hgt":
                         ckpt_h = str(item.get("checkpoint_path", "")).strip()
                         if ckpt_h:
-                            p_h = Path(ckpt_h)
-                            if not p_h.is_absolute():
-                                p_h = (root / p_h).resolve()
+                            p_h = resolve_project_artifact_path(
+                                ckpt_h,
+                                project_root=root,
+                                preferred_dirs=(root / "reports" / "models",),
+                            )
                             if p_h.exists():
                                 hgt_ckpt_path = p_h
                     skipped_non_masked += 1
@@ -297,9 +300,11 @@ class EnhancedInferenceEngine:
                 if interaction == "hgt" or name == "hetero_hgt":
                     ckpt_h = str(item.get("checkpoint_path", "")).strip()
                     if ckpt_h:
-                        p_h = Path(ckpt_h)
-                        if not p_h.is_absolute():
-                            p_h = (root / p_h).resolve()
+                        p_h = resolve_project_artifact_path(
+                            ckpt_h,
+                            project_root=root,
+                            preferred_dirs=(root / "reports" / "models",),
+                        )
                         if p_h.exists():
                             hgt_ckpt_path = p_h
                     skipped_non_masked += 1
@@ -308,9 +313,11 @@ class EnhancedInferenceEngine:
                 ckpt = str(item.get("checkpoint_path", "")).strip()
                 if not ckpt:
                     continue
-                p = Path(ckpt)
-                if not p.is_absolute():
-                    p = (root / p).resolve()
+                p = resolve_project_artifact_path(
+                    ckpt,
+                    project_root=root,
+                    preferred_dirs=(root / "reports" / "models",),
+                )
                 if not p.exists():
                     logger.warning("Ensemble checkpoint missing: %s", p)
                     continue
@@ -402,9 +409,11 @@ class EnhancedInferenceEngine:
             if not graph_path_raw:
                 logger.warning("HGT checkpoint missing graph_path: %s", ckpt_path)
                 return
-            gp = Path(graph_path_raw)
-            if not gp.is_absolute():
-                gp = (Path(__file__).resolve().parents[2] / gp).resolve()
+            gp = resolve_project_artifact_path(
+                graph_path_raw,
+                project_root=Path(__file__).resolve().parents[2],
+                preferred_dirs=(Path(__file__).resolve().parents[2] / "graphs",),
+            )
             if not gp.exists():
                 logger.warning("HGT graph path missing: %s", gp)
                 return
