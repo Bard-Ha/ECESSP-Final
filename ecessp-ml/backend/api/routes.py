@@ -37,6 +37,7 @@ from materials.chemistry_engine import (
     InsertionFilter,
     AlkaliValidator,
 )
+from materials.material_generator import MaterialGenerator
 
 logger = logging.getLogger(__name__)
 
@@ -318,6 +319,62 @@ def runtime_diagnostics():
             "graph_exists": graph_exists,
         },
         "metadata": metadata,
+    }
+
+
+@router.get("/data-diagnostics", status_code=status.HTTP_200_OK)
+def data_diagnostics():
+    processed_dir = DATA_DIR / "processed"
+    files = {
+        "material_catalog_csv": processed_dir / "material_catalog.csv",
+        "batteries_parsed_csv": processed_dir / "batteries_parsed.csv",
+        "batteries_parsed_curated_csv": processed_dir / "batteries_parsed_curated.csv",
+        "batteries_ml_curated_csv": processed_dir / "batteries_ml_curated.csv",
+    }
+
+    file_status: dict[str, Any] = {}
+    for key, path in files.items():
+        exists = path.exists()
+        file_status[key] = {
+            "path": str(path),
+            "exists": exists,
+            "size_bytes": path.stat().st_size if exists and path.is_file() else None,
+        }
+
+    generator = MaterialGenerator()
+    rows_loaded: int | None = None
+    sample_working_ions: list[str] = []
+    sample_formulas: list[str] = []
+    load_error: str | None = None
+    try:
+        rows = generator._load_rows()
+        rows_loaded = len(rows)
+        ions_seen: list[str] = []
+        formulas_seen: list[str] = []
+        for row in rows[:20]:
+            ion = str(row.get("working_ion") or "").strip()
+            formula = str(row.get("framework_formula") or row.get("battery_formula") or "").strip()
+            if ion and ion not in ions_seen:
+                ions_seen.append(ion)
+            if formula and formula not in formulas_seen:
+                formulas_seen.append(formula)
+        sample_working_ions = ions_seen[:8]
+        sample_formulas = formulas_seen[:5]
+    except Exception as exc:
+        load_error = str(exc)
+
+    return {
+        "status": "ok",
+        "service": "ecessp-ml",
+        "processed_dir": str(processed_dir),
+        "files": file_status,
+        "material_generator": {
+            "dataset_path": str(generator._dataset_path),
+            "rows_loaded": rows_loaded,
+            "sample_working_ions": sample_working_ions,
+            "sample_formulas": sample_formulas,
+            "load_error": load_error,
+        },
     }
 
 
