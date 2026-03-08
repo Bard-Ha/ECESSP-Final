@@ -89,7 +89,7 @@
   "final_test_loss_iid": 2.028658628463745,
   "final_test_loss_ood": 1.0559009313583374,
   "best_epoch": 81,
-  "best_checkpoint": "C:\\Users\\Rinatoh computer\\Desktop\\ECESSP\\ecessp-ml\\reports\\models\\ensemble_4_best_20260227_120033.pt",
+  "best_checkpoint": "reports/models/ensemble_4_best_20260227_120033.pt",
   "evaluation_metrics": {
     "iid": {
       "normalized_space": {

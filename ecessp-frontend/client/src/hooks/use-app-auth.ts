@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { API_BASE, resolveApiUrl } from "@/lib/api-base";
 
 const TOKEN_KEY = "ecessp_app_token";
+const RAW_AUTH_OVERRIDE = (import.meta.env.VITE_AUTH_ENABLED as string | undefined)?.trim().toLowerCase();
 
 type AuthConfigResponse = {
   auth_enabled: boolean;
@@ -34,8 +35,17 @@ function setStoredToken(token: string | null): void {
   window.localStorage.setItem(TOKEN_KEY, token);
 }
 
+function resolveAuthOverride(): boolean | null {
+  if (!RAW_AUTH_OVERRIDE) return null;
+  if (["1", "true", "yes", "on"].includes(RAW_AUTH_OVERRIDE)) return true;
+  if (["0", "false", "no", "off"].includes(RAW_AUTH_OVERRIDE)) return false;
+  return null;
+}
+
 export function useAppAuth() {
   const [token, setToken] = useState<string | null>(getStoredToken);
+  const authOverride = resolveAuthOverride();
+  const usesExternalApi = API_BASE !== "/api";
 
   useEffect(() => {
     setStoredToken(token);
@@ -43,6 +53,7 @@ export function useAppAuth() {
 
   const authConfig = useQuery({
     queryKey: ["auth-config"],
+    enabled: authOverride === null && !usesExternalApi,
     queryFn: async (): Promise<AuthConfigResponse> => {
       const res = await fetch(resolveApiUrl(`${API_BASE}/auth/config`));
       if (!res.ok) throw new Error(`Auth config failed (${res.status})`);
@@ -51,7 +62,8 @@ export function useAppAuth() {
     staleTime: 60_000,
   });
 
-  const authEnabled = Boolean(authConfig.data?.auth_enabled);
+  const authEnabled =
+    authOverride ?? (usesExternalApi ? false : Boolean(authConfig.data?.auth_enabled));
 
   const authMe = useQuery({
     queryKey: ["auth-me", token, authEnabled],
@@ -108,7 +120,7 @@ export function useAppAuth() {
 
   return {
     authEnabled,
-    authConfigLoading: authConfig.isLoading,
+    authConfigLoading: authOverride === null && !usesExternalApi && authConfig.isLoading,
     authenticated,
     user: authMe.data,
     token,

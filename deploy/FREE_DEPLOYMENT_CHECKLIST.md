@@ -48,6 +48,11 @@ Upload these local files after cloning the repo on the server:
 - `ecessp-ml/reports/three_model_ensemble_manifest.json`
 - `ecessp-ml/reports/active_learning_queue.jsonl`
 
+You can automate the VM bootstrap and file upload with:
+
+- `deploy/bootstrap_api_server.sh` on the OCI VM
+- `deploy/upload_runtime_assets.ps1 -HostName <oci-ip>` on your Windows machine
+
 Example flow:
 
 ```powershell
